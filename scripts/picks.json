@@ -105,7 +105,7 @@
  ],
  "day-apero": [
   "grindelwald",
-  0,
+  19,
   "Grindelwald"
  ],
  "day-fondue": [
@@ -255,15 +255,13 @@
  ],
  "t-fondue": [
   "swiss-fondue",
-  0,
-  "Fondue",
-  "verify"
+  2,
+  "Fondue, Thurgau"
  ],
  "t-raclette": [
-  "raclette-cheese",
-  4,
-  "Raclette",
-  "verify"
+  "swiss-chalet",
+  15,
+  "Valais chalets"
  ],
  "t-chocolate": [
   "swiss-chocolate",
@@ -284,9 +282,8 @@
  ],
  "t-alpabzug": [
   "swiss-cows-alps",
-  5,
-  "Alpine cattle",
-  "verify"
+  12,
+  "Hasliberg"
  ],
  "t-skiing": [
   "verbier-skiing",
@@ -315,9 +312,8 @@
  ],
  "tips-sbb": [
   "swiss-train-station-sbb",
-  6,
-  "SBB train",
-  "verify"
+  17,
+  "Grindelwald station"
  ],
  "tips-sign": [
   "swiss-hiking-trail-sign",
@@ -344,9 +340,8 @@
  ],
  "hero-contact": [
   "swiss-chalet",
-  0,
-  "Swiss chalet",
-  "verify"
+  25,
+  "Ritzingen, Valais"
  ],
  "jr-pass": [
   "landwasser-viaduct",
@@ -354,10 +349,9 @@
   "Landwasser Viaduct"
  ],
  "jr-fondue": [
-  "swiss-fondue",
-  3,
-  "Fondue",
-  "verify"
+  "swiss-chalet",
+  22,
+  "Swiss chalet in winter"
  ],
  "jr-autumn": [
   "st-moritz",
@@ -367,9 +361,8 @@
  ],
  "cta-bg": [
   "rigi",
-  5,
-  "Rigi above the clouds",
-  "verify"
+  14,
+  "Above the clouds"
  ],
  "og": [
   "matterhorn-zermatt",

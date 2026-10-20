@@ -263,18 +263,18 @@
    "location": "Bachalpsee",
    "downloadLocation": "https://api.unsplash.com/photos/eVwfArKrBj8/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8Mnx8QmFjaGFscHNlZXxlbnwwfHx8fDE3OTI0OTc2ODF8MA"
   },
-  "bKLEKeqxRNU": {
-   "id": "bKLEKeqxRNU",
-   "raw": "https://images.unsplash.com/photo-1567109629107-5345afdcbf9d?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MXx8R3JpbmRlbHdhbGR8ZW58MHx8fHwxNzkyNDk3NjgwfDA&ixlib=rb-4.1.0",
-   "alt": "Houses on field — Grindelwald, Switzerland",
-   "width": 4032,
-   "height": 3024,
-   "color": "#405959",
-   "name": "Steven He",
-   "userUrl": "https://unsplash.com/@stevenhe",
-   "pageUrl": "https://unsplash.com/photos/houses-on-field-bKLEKeqxRNU",
+  "pKAom32wMj4": {
+   "id": "pKAom32wMj4",
+   "raw": "https://images.unsplash.com/photo-1529420001315-597e62cb0bba?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MjB8fEdyaW5kZWx3YWxkfGVufDB8fHx8MTc5MjQ5NzY4MHww&ixlib=rb-4.1.0",
+   "alt": "Bird's eye view photography of village near mountain — Grindelwald, Switzerland",
+   "width": 4000,
+   "height": 2250,
+   "color": "#598ca6",
+   "name": "Julian Villella",
+   "userUrl": "https://unsplash.com/@jvillella",
+   "pageUrl": "https://unsplash.com/photos/birds-eye-view-photography-of-village-near-mountain-pKAom32wMj4",
    "location": "Grindelwald",
-   "downloadLocation": "https://api.unsplash.com/photos/bKLEKeqxRNU/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MXx8R3JpbmRlbHdhbGR8ZW58MHx8fHwxNzkyNDk3NjgwfDA"
+   "downloadLocation": "https://api.unsplash.com/photos/pKAom32wMj4/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MjB8fEdyaW5kZWx3YWxkfGVufDB8fHx8MTc5MjQ5NzY4MHww"
   },
   "JuSDnZwZnTk": {
    "id": "JuSDnZwZnTk",
@@ -630,31 +630,18 @@
    "location": "Lavaux",
    "downloadLocation": "https://api.unsplash.com/photos/7nd6GDq_zsw/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTB8fExhdmF1eCUyMHZpbmV5YXJkc3xlbnwwfHx8fDE3OTI0OTc2ODV8MA"
   },
-  "vo7GGTh6sXM": {
-   "id": "vo7GGTh6sXM",
-   "raw": "https://images.unsplash.com/photo-1512594282804-b5f400408c9d?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MXx8U3dpc3MlMjBmb25kdWV8ZW58MHx8fHwxNzkyNDk3Njg5fDA&ixlib=rb-4.1.0",
-   "alt": "Two person holding fork dipping food on sauce — Fondue, Switzerland",
-   "width": 4741,
-   "height": 3161,
+  "UoRVPQKIBQ8": {
+   "id": "UoRVPQKIBQ8",
+   "raw": "https://images.unsplash.com/photo-1570221577389-a777e92ba95f?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTZ8fFN3aXNzJTIwY2hhbGV0fGVufDB8fHx8MTc5MjQ5NzY4OXww&ixlib=rb-4.1.0",
+   "alt": "Houses on rock — Valais chalets, Switzerland",
+   "width": 4892,
+   "height": 3261,
    "color": "#262626",
-   "name": "angela pham",
-   "userUrl": "https://unsplash.com/@apham",
-   "pageUrl": "https://unsplash.com/photos/two-person-holding-fork-dipping-food-on-sauce-vo7GGTh6sXM",
-   "location": "Fondue",
-   "downloadLocation": "https://api.unsplash.com/photos/vo7GGTh6sXM/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MXx8U3dpc3MlMjBmb25kdWV8ZW58MHx8fHwxNzkyNDk3Njg5fDA"
-  },
-  "sT1r3QCvor4": {
-   "id": "sT1r3QCvor4",
-   "raw": "https://images.unsplash.com/photo-1635924210828-ccbe493b6e1d?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8NXx8cmFjbGV0dGUlMjBjaGVlc2V8ZW58MHx8fHwxNzkyNDk3Njg5fDA&ixlib=rb-4.1.0",
-   "alt": "A person cutting a piece of cake with a knife — Raclette, Switzerland",
-   "width": 5184,
-   "height": 3456,
-   "color": "#d9d9c0",
-   "name": "Ellena McGuinness",
-   "userUrl": "https://unsplash.com/@ellenaalice",
-   "pageUrl": "https://unsplash.com/photos/a-person-cutting-a-piece-of-cake-with-a-knife-sT1r3QCvor4",
-   "location": "Raclette",
-   "downloadLocation": "https://api.unsplash.com/photos/sT1r3QCvor4/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8NXx8cmFjbGV0dGUlMjBjaGVlc2V8ZW58MHx8fHwxNzkyNDk3Njg5fDA"
+   "name": "Uwe Conrad",
+   "userUrl": "https://unsplash.com/@uconrad",
+   "pageUrl": "https://unsplash.com/photos/houses-on-rock-UoRVPQKIBQ8",
+   "location": "Valais chalets",
+   "downloadLocation": "https://api.unsplash.com/photos/UoRVPQKIBQ8/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTZ8fFN3aXNzJTIwY2hhbGV0fGVufDB8fHx8MTc5MjQ5NzY4OXww"
   },
   "HFj0n4FS9uQ": {
    "id": "HFj0n4FS9uQ",
@@ -695,18 +682,18 @@
    "location": "Swiss flag",
    "downloadLocation": "https://api.unsplash.com/photos/ZlTC__EPkKk/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8Nnx8U3dpc3MlMjBuYXRpb25hbCUyMGRheXxlbnwwfHx8fDE3OTI0OTc2OTF8MA"
   },
-  "w-bb69AUhNc": {
-   "id": "w-bb69AUhNc",
-   "raw": "https://images.unsplash.com/photo-1660144269855-dd1ccfee7478?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8Nnx8U3dpc3MlMjBjb3dzJTIwYWxwc3xlbnwwfHx8fDE3OTI0OTc2OTF8MA&ixlib=rb-4.1.0",
-   "alt": "A group of cows in a field — Alpine cattle, Switzerland",
-   "width": 4000,
-   "height": 1872,
-   "color": "#c0c0c0",
-   "name": "World of Magic",
-   "userUrl": "https://unsplash.com/@worldofmagic",
-   "pageUrl": "https://unsplash.com/photos/a-group-of-cows-in-a-field-w-bb69AUhNc",
-   "location": "Alpine cattle",
-   "downloadLocation": "https://api.unsplash.com/photos/w-bb69AUhNc/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8Nnx8U3dpc3MlMjBjb3dzJTIwYWxwc3xlbnwwfHx8fDE3OTI0OTc2OTF8MA"
+  "lLYpJNzvLdE": {
+   "id": "lLYpJNzvLdE",
+   "raw": "https://images.unsplash.com/photo-1625597250075-0adcb325d818?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTN8fFN3aXNzJTIwY293cyUyMGFscHN8ZW58MHx8fHwxNzkyNDk3NjkxfDA&ixlib=rb-4.1.0",
+   "alt": "Brown cow on green grass field during daytime — Hasliberg, Switzerland",
+   "width": 4717,
+   "height": 3145,
+   "color": "#8ca60c",
+   "name": "Lukas W.",
+   "userUrl": "https://unsplash.com/@theluki",
+   "pageUrl": "https://unsplash.com/photos/brown-cow-on-green-grass-field-during-daytime-lLYpJNzvLdE",
+   "location": "Hasliberg",
+   "downloadLocation": "https://api.unsplash.com/photos/lLYpJNzvLdE/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTN8fFN3aXNzJTIwY293cyUyMGFscHN8ZW58MHx8fHwxNzkyNDk3NjkxfDA"
   },
   "ZH65pZvb0Do": {
    "id": "ZH65pZvb0Do",
@@ -773,18 +760,18 @@
    "location": "Bern",
    "downloadLocation": "https://api.unsplash.com/photos/xosBoKRT0qE/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8M3x8QmVybiUyMG9sZCUyMHRvd258ZW58MHx8fHwxNzkyNDk3Njg3fDA"
   },
-  "NH94uVZV_zc": {
-   "id": "NH94uVZV_zc",
-   "raw": "https://images.unsplash.com/photo-1777763520462-4fe45a2de570?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8N3x8U3dpc3MlMjB0cmFpbiUyMHN0YXRpb24lMjBTQkJ8ZW58MHx8fHwxNzkyNDk3NjkyfDA&ixlib=rb-4.1.0",
-   "alt": "A red train at a station platform — SBB train, Switzerland",
-   "width": 4170,
-   "height": 6255,
-   "color": "#262626",
-   "name": "Josip Ivanković",
-   "userUrl": "https://unsplash.com/@piak",
-   "pageUrl": "https://unsplash.com/photos/a-red-train-at-a-station-platform-NH94uVZV_zc",
-   "location": "SBB train",
-   "downloadLocation": "https://api.unsplash.com/photos/NH94uVZV_zc/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8N3x8U3dpc3MlMjB0cmFpbiUyMHN0YXRpb24lMjBTQkJ8ZW58MHx8fHwxNzkyNDk3NjkyfDA"
+  "Eb4nsvs6M6o": {
+   "id": "Eb4nsvs6M6o",
+   "raw": "https://images.unsplash.com/photo-1578824964521-4b8ecb254c7f?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTh8fFN3aXNzJTIwdHJhaW4lMjBzdGF0aW9uJTIwU0JCfGVufDB8fHx8MTc5MjQ5NzY5Mnww&ixlib=rb-4.1.0",
+   "alt": "Blue and yellow train — Grindelwald station, Switzerland",
+   "width": 5472,
+   "height": 3648,
+   "color": "#f3f3f3",
+   "name": "Josef Ivan Jimenea",
+   "userUrl": "https://unsplash.com/@ivan33",
+   "pageUrl": "https://unsplash.com/photos/blue-and-yellow-train-Eb4nsvs6M6o",
+   "location": "Grindelwald station",
+   "downloadLocation": "https://api.unsplash.com/photos/Eb4nsvs6M6o/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTh8fFN3aXNzJTIwdHJhaW4lMjBzdGF0aW9uJTIwU0JCfGVufDB8fHx8MTc5MjQ5NzY5Mnww"
   },
   "CzJJsjllHt0": {
    "id": "CzJJsjllHt0",
@@ -838,18 +825,18 @@
    "location": "Zermatt at night",
    "downloadLocation": "https://api.unsplash.com/photos/RY7nuODQzOo/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8OHx8WmVybWF0dCUyMHZpbGxhZ2V8ZW58MHx8fHwxNzkyNDk3Njc5fDA"
   },
-  "JT-RUtO2sfs": {
-   "id": "JT-RUtO2sfs",
-   "raw": "https://images.unsplash.com/photo-1584098731526-e3924fad98db?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MXx8U3dpc3MlMjBjaGFsZXR8ZW58MHx8fHwxNzkyNDk3Njg5fDA&ixlib=rb-4.1.0",
-   "alt": "White and brown house near green grass field and mountain during daytime — Swiss chalet, Switzerland",
-   "width": 4032,
-   "height": 3024,
-   "color": "#59730c",
-   "name": "Aswathy N",
-   "userUrl": "https://unsplash.com/@abnair",
-   "pageUrl": "https://unsplash.com/photos/white-and-brown-house-near-green-grass-field-and-mountain-during-daytime-JT-RUtO2sfs",
-   "location": "Swiss chalet",
-   "downloadLocation": "https://api.unsplash.com/photos/JT-RUtO2sfs/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MXx8U3dpc3MlMjBjaGFsZXR8ZW58MHx8fHwxNzkyNDk3Njg5fDA"
+  "ko2dYtgkAig": {
+   "id": "ko2dYtgkAig",
+   "raw": "https://images.unsplash.com/photo-1649602481445-31cac2148ec7?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MjZ8fFN3aXNzJTIwY2hhbGV0fGVufDB8fHx8MTc5MjQ5NzY4OXww&ixlib=rb-4.1.0",
+   "alt": "A large brown building sitting in the middle of a lush green field — Ritzingen, Valais, Switzerland",
+   "width": 6000,
+   "height": 4000,
+   "color": "#26260c",
+   "name": "Peter Borter",
+   "userUrl": "https://unsplash.com/@peter_borter",
+   "pageUrl": "https://unsplash.com/photos/a-large-brown-building-sitting-in-the-middle-of-a-lush-green-field-ko2dYtgkAig",
+   "location": "Ritzingen, Valais",
+   "downloadLocation": "https://api.unsplash.com/photos/ko2dYtgkAig/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MjZ8fFN3aXNzJTIwY2hhbGV0fGVufDB8fHx8MTc5MjQ5NzY4OXww"
   },
   "prwzMOBiMTQ": {
    "id": "prwzMOBiMTQ",
@@ -864,18 +851,18 @@
    "location": "Landwasser Viaduct",
    "downloadLocation": "https://api.unsplash.com/photos/prwzMOBiMTQ/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTF8fExhbmR3YXNzZXIlMjB2aWFkdWN0fGVufDB8fHx8MTc5MjQ5NzY4Nnww"
   },
-  "rxbiOsQAxkE": {
-   "id": "rxbiOsQAxkE",
-   "raw": "https://images.unsplash.com/photo-1754910568106-e71804067c2c?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8NHx8U3dpc3MlMjBmb25kdWV8ZW58MHx8fHwxNzkyNDk3Njg5fDA&ixlib=rb-4.1.0",
-   "alt": "People dipping bread into a pot of cheese fondue — Fondue, Switzerland",
-   "width": 5236,
-   "height": 3491,
-   "color": "#f3f3d9",
-   "name": "Andri Aeschlimann",
-   "userUrl": "https://unsplash.com/@andr1_aeschli",
-   "pageUrl": "https://unsplash.com/photos/people-dipping-bread-into-a-pot-of-cheese-fondue-rxbiOsQAxkE",
-   "location": "Fondue",
-   "downloadLocation": "https://api.unsplash.com/photos/rxbiOsQAxkE/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8NHx8U3dpc3MlMjBmb25kdWV8ZW58MHx8fHwxNzkyNDk3Njg5fDA"
+  "59_3-YEesLE": {
+   "id": "59_3-YEesLE",
+   "raw": "https://images.unsplash.com/photo-1610577657159-c01c5ab68f31?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MjN8fFN3aXNzJTIwY2hhbGV0fGVufDB8fHx8MTc5MjQ5NzY4OXww&ixlib=rb-4.1.0",
+   "alt": "Red wooden house near snow covered mountain — Swiss chalet in winter, Switzerland",
+   "width": 3648,
+   "height": 5472,
+   "color": "#f3f3f3",
+   "name": "Charleen Vesin",
+   "userUrl": "https://unsplash.com/@cha29",
+   "pageUrl": "https://unsplash.com/photos/red-wooden-house-near-snow-covered-mountain-59_3-YEesLE",
+   "location": "Swiss chalet in winter",
+   "downloadLocation": "https://api.unsplash.com/photos/59_3-YEesLE/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MjN8fFN3aXNzJTIwY2hhbGV0fGVufDB8fHx8MTc5MjQ5NzY4OXww"
   },
   "vNVwg35VZrg": {
    "id": "vNVwg35VZrg",
@@ -890,18 +877,18 @@
    "location": "Engadin",
    "downloadLocation": "https://api.unsplash.com/photos/vNVwg35VZrg/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTB8fFN0LiUyME1vcml0enxlbnwwfHx8fDE3OTI0OTc2ODd8MA"
   },
-  "0lU605E9f4s": {
-   "id": "0lU605E9f4s",
-   "raw": "https://images.unsplash.com/photo-1627922152421-15f7fab8a738?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8Nnx8UmlnaXxlbnwwfHx8fDE3OTI0OTc2ODN8MA&ixlib=rb-4.1.0",
-   "alt": "Green grass covered mountain near lake under white clouds and blue sky during daytime — Rigi above the clouds, Switzerland",
-   "width": 3024,
-   "height": 4032,
-   "color": "#a6c0f3",
-   "name": "Andreas Hobi",
-   "userUrl": "https://unsplash.com/@andreashobi",
-   "pageUrl": "https://unsplash.com/photos/green-grass-covered-mountain-near-lake-under-white-clouds-and-blue-sky-during-daytime-0lU605E9f4s",
-   "location": "Rigi above the clouds",
-   "downloadLocation": "https://api.unsplash.com/photos/0lU605E9f4s/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8Nnx8UmlnaXxlbnwwfHx8fDE3OTI0OTc2ODN8MA"
+  "vecOas2TdLc": {
+   "id": "vecOas2TdLc",
+   "raw": "https://images.unsplash.com/photo-1673018646837-784e414d4542?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTV8fFJpZ2l8ZW58MHx8fHwxNzkyNDk3NjgzfDA&ixlib=rb-4.1.0",
+   "alt": "A house on top of a mountain surrounded by clouds — Above the clouds, Switzerland",
+   "width": 4032,
+   "height": 2268,
+   "color": "#262626",
+   "name": "Hasmik Ghazaryan Olson",
+   "userUrl": "https://unsplash.com/@find_something_pretty_everyday",
+   "pageUrl": "https://unsplash.com/photos/a-house-on-top-of-a-mountain-surrounded-by-clouds-vecOas2TdLc",
+   "location": "Above the clouds",
+   "downloadLocation": "https://api.unsplash.com/photos/vecOas2TdLc/download?ixid=M3wxMTA4MTIwfDB8MXxzZWFyY2h8MTV8fFJpZ2l8ZW58MHx8fHwxNzkyNDk3NjgzfDA"
   }
  },
  "slots": {
@@ -925,7 +912,7 @@
   "day-walk": "fPE0zd_69AM",
   "day-lunch": "RTeyimkVjSM",
   "day-free": "eVwfArKrBj8",
-  "day-apero": "bKLEKeqxRNU",
+  "day-apero": "pKAom32wMj4",
   "day-fondue": "JuSDnZwZnTk",
   "day-stars": "N9291YMeWf8",
   "p-zermatt": "rrL-elznwug",
@@ -954,27 +941,27 @@
   "t-lucerne": "KBE0J47YBRc",
   "t-verzasca": "eFqBWkmNUj0",
   "t-lavaux": "7nd6GDq_zsw",
-  "t-fondue": "vo7GGTh6sXM",
-  "t-raclette": "sT1r3QCvor4",
+  "t-fondue": "JuSDnZwZnTk",
+  "t-raclette": "UoRVPQKIBQ8",
   "t-chocolate": "HFj0n4FS9uQ",
   "t-fasnacht": "GXQZh96YHRE",
   "t-nationalday": "ZlTC__EPkKk",
-  "t-alpabzug": "w-bb69AUhNc",
+  "t-alpabzug": "lLYpJNzvLdE",
   "t-skiing": "ZH65pZvb0Do",
   "t-paragliding": "YdBme5Of40c",
   "t-aletsch": "RkFL_G2a5fI",
   "t-appenzell": "o7LDdRDIYiY",
   "t-bern": "xosBoKRT0qE",
-  "tips-sbb": "NH94uVZV_zc",
+  "tips-sbb": "Eb4nsvs6M6o",
   "tips-sign": "CzJJsjllHt0",
   "hero-destinations": "z_f2JrBRbOg",
   "hero-things": "dzWEBcHSOgU",
   "hero-tips": "RY7nuODQzOo",
-  "hero-contact": "JT-RUtO2sfs",
+  "hero-contact": "ko2dYtgkAig",
   "jr-pass": "prwzMOBiMTQ",
-  "jr-fondue": "rxbiOsQAxkE",
+  "jr-fondue": "59_3-YEesLE",
   "jr-autumn": "vNVwg35VZrg",
-  "cta-bg": "0lU605E9f4s",
+  "cta-bg": "vecOas2TdLc",
   "og": "qnPEmE8M1c4"
  }
 }

@@ -50,7 +50,7 @@ Full-viewport, edge-to-edge media with a dark gradient for legibility (as in the
 3. `03` **Lucerne** — lake & paddle steamers
 4. `04` **Lugano** — palms under the Alps
 
-Bottom-left: huge headline **"Higher. Slower. Swiss."** Right column: one short paragraph + two pill buttons (`Explore destinations ↗`, `Dates ↗`). Desktop: muted, looping Pexels video with poster image. Mobile: still image only.
+Bottom-left: huge headline **"Above the clouds. On schedule."** Right column: one short paragraph + two pill buttons (`Explore destinations ↗`, `Dates ↗`). Desktop: muted, looping Pexels video with poster image. Mobile: still image only.
 
 ## 6. Logo idea
 
@@ -82,7 +82,7 @@ Wordmark **Swiss Horizon** in Inter Tight 600 with a small circular mark to its 
 | # | Reference section | Swiss Horizon version |
 |---|---|---|
 | — | Sticky bordered header: logo, nav, "Next · retreat · date · spots left" ticker, Reserve pill | Logo, nav (Destinations · Things to Do · Travel Tips · Contact), ticker "Next · Glacier Express Week · 12 Jan · 4 seats left", `Book ↗` pill. Mobile: burger → full-screen menu. |
-| 00 | Hero: full-bleed media, 4 location tabs with progress bars, intro paragraph + 2 pill CTAs | Zermatt / Lauterbrunnen / Lucerne / Lugano scenes; headline "Higher. Slower. Swiss."; CTAs Explore destinations / Dates. |
+| 00 | Hero: full-bleed media, 4 location tabs with progress bars, intro paragraph + 2 pill CTAs | Zermatt / Lauterbrunnen / Lucerne / Lugano scenes; headline "Above the clouds. On schedule."; CTAs Explore destinations / Dates. |
 | 01 | **The idea**: big word-reveal statement + 3 category columns (Wellness / Adventure / Hybrid) with tall images | "(01) The idea" — statement about one week, one rail pass, small groups. Columns: **Peaks** (high alpine, hiking), **Lakes** (slow, water, towns), **Rails** (panoramic train journeys). |
 | 02 | **Who we are**: image left, two-tone headline right, "Our story →", two big stats | Image of a chalet at dusk; "A travel company run by mountain people, not marketers." Stats: **4.9** avg rating · **96%** of trains on time (a wink — SBB punctuality). |
 | 03 | **Retreats**: filter chips + grid of trip cards (price, place, dates, nights, group size, spots, effort meter) | "(03) Journeys" — chips All / Peaks / Lakes / Rails; 6 cards: Matterhorn & Five Lakes, Jungfrau Huts, Glacier Express Winter Week, Lake Lucerne Slow Week, Ticino Lakes & Lugano, Bern & Lavaux Wine Terraces. Prices in CHF; "Effort 1–5" meter. |
