@@ -1,0 +1,30 @@
+---
+import { photo, src, srcset } from '../lib/media';
+
+interface Props {
+  photo: string;
+  sizes?: string;
+  ratio?: number; // height / width; omit to keep the original crop
+  widths?: number[];
+  class?: string;
+  priority?: boolean;
+  alt?: string;
+}
+const { photo: slotName, sizes = '100vw', ratio, widths = [480, 800, 1200, 1600, 2200], class: cls = '', priority = false, alt } = Astro.props;
+const p = photo(slotName);
+const r = ratio ?? p.height / p.width;
+const fallbackW = widths[Math.min(2, widths.length - 1)];
+---
+<img
+  src={src(p, fallbackW, ratio)}
+  srcset={srcset(p, widths, ratio)}
+  sizes={sizes}
+  width={fallbackW}
+  height={Math.round(fallbackW * r)}
+  alt={alt ?? p.alt}
+  loading={priority ? 'eager' : 'lazy'}
+  decoding={priority ? 'sync' : 'async'}
+  fetchpriority={priority ? 'high' : 'auto'}
+  style={`background-color:${p.color}`}
+  class={`h-full w-full object-cover ${cls}`}
+/>

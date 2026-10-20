@@ -1,0 +1,15 @@
+---
+import SectionHead from '../SectionHead.astro';
+import FilterChips from '../FilterChips.astro';
+import JourneyCard from '../JourneyCard.astro';
+import { journeys } from '../../data/site';
+---
+<section class="section border-t hair bg-ink-950" id="journeys">
+  <div class="wrap" data-filter-group>
+    <SectionHead n="03" label="Journeys" title={['Upcoming', 'journeys']} link={{ href: '#departures', text: 'All departures' }} />
+    <FilterChips options={['Peaks', 'Lakes', 'Rails']} label="Filter journeys" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {journeys.map((j) => <JourneyCard j={j} />)}
+    </div>
+  </div>
+</section>

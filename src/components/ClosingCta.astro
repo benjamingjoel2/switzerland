@@ -1,0 +1,16 @@
+---
+import Img from './Img.astro';
+import Pill from './Pill.astro';
+interface Props { lines?: string[]; cta?: string; href?: string; }
+const { lines = ['Ten people.', 'One timetable.', 'Your week.'], cta = 'Find your journey', href = '/contact/' } = Astro.props;
+---
+<section class="relative isolate overflow-hidden">
+  <div class="absolute inset-0 -z-10"><Img photo="cta-bg" sizes="100vw" widths={[640, 1080, 1600, 2200]} /></div>
+  <div class="absolute inset-0 -z-10 bg-ink-950/60"></div>
+  <div class="wrap flex min-h-[80vh] flex-col items-start justify-end py-20 md:py-28">
+    <h2 class="display text-[3.25rem] sm:text-7xl lg:text-[9rem]">
+      {lines.map((l, i) => <span data-mask style={`--d:${i * 100}ms`}><span>{l}</span></span>)}
+    </h2>
+    <div class="mt-10" data-reveal><Pill href={href}>{cta}</Pill></div>
+  </div>
+</section>

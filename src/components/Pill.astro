@@ -1,0 +1,6 @@
+---
+import Arrow from './Arrow.astro';
+interface Props { href: string; variant?: 'light' | 'ghost'; class?: string; }
+const { href, variant = 'light', class: cls = '' } = Astro.props;
+---
+<a href={href} class={`pill pill-${variant} ${cls}`}><slot /><span class="chip"><Arrow /></span></a>

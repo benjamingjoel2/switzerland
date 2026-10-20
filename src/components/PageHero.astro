@@ -1,0 +1,18 @@
+---
+import Img from './Img.astro';
+interface Props { photo: string; label: string; title: string[]; intro: string; }
+const { photo: slotName, label, title, intro } = Astro.props;
+---
+<section class="relative isolate flex min-h-[78svh] items-end overflow-hidden pt-28 pb-14 md:pb-20">
+  <div class="absolute inset-0 -z-10"><Img photo={slotName} priority sizes="100vw" widths={[640, 1080, 1600, 2200, 2800]} /></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/40 to-ink-950/40"></div>
+  <div class="wrap grid items-end gap-8 lg:grid-cols-12">
+    <div class="lg:col-span-8">
+      <p class="label mb-6 !text-snow/70" data-reveal>{label}</p>
+      <h1 class="display text-[3.5rem] sm:text-7xl lg:text-[8.5rem]">
+        {title.map((t, i) => <span data-mask style={`--d:${i * 110}ms`}><span>{t}</span></span>)}
+      </h1>
+    </div>
+    <p class="max-w-md text-lg text-snow/85 lg:col-span-4" data-reveal style="--d:300ms">{intro}</p>
+  </div>
+</section>

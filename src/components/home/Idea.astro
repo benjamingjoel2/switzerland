@@ -1,0 +1,28 @@
+---
+import Img from '../Img.astro';
+import { themes } from '../../data/site';
+---
+<section class="section" id="idea">
+  <div class="wrap">
+    <div class="grid gap-8 lg:grid-cols-12">
+      <p class="label lg:col-span-3" data-reveal>(01) The idea</p>
+      <p class="headline text-[2rem] sm:text-5xl lg:col-span-9 lg:text-[3.6rem]" data-words>
+        One country, one week, one rail pass. Since 2017 we’ve taken 1,480 guests through 14 Swiss valleys — always ten at most, always on the 07:52.
+      </p>
+    </div>
+    <div class="mt-20 grid border-t hair md:mt-28 md:grid-cols-3">
+      {themes.map((t, i) => (
+        <a href="/things-to-do/" class:list={['group flex flex-col pt-6 pb-2 md:px-6', i === 0 ? 'md:pl-0' : 'md:border-l hair', i === 2 && 'md:pr-0', i > 0 && 'mt-10 md:mt-0']} data-reveal style={`--d:${i * 100}ms`}>
+          <div class="mb-6 flex items-baseline justify-between">
+            <h3 class="text-xl font-semibold tracking-tight">{t.name}</h3>
+            <span class="font-mono text-xs text-slate-400">/ {t.count} journeys</span>
+          </div>
+          <div class="img-zoom aspect-[4/5] overflow-hidden rounded-sm">
+            <Img photo={t.img} ratio={1.25} sizes="(min-width:768px) 32vw, 100vw" widths={[400, 640, 900, 1200]} />
+          </div>
+          <p class="mt-6 text-slate-400">{t.text}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

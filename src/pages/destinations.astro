@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Img from '../components/Img.astro';
+import FilterChips from '../components/FilterChips.astro';
+import TextLink from '../components/TextLink.astro';
+import ClosingCta from '../components/ClosingCta.astro';
+import { destinations } from '../data/destinations';
+---
+<Base title="Destinations in Switzerland" description="Ten Swiss destinations worth your week: Zermatt, the Jungfrau Region, Lucerne, Lake Geneva, Lugano, Bern, Zurich, St. Moritz, Appenzell and Basel — with seasons, altitudes and how to get there." ogSlot="hero-destinations">
+  <PageHero photo="hero-destinations" label="Destinations · 10 places" title={['Ten places,', 'one rail pass.']}
+    intro="Switzerland is small enough to cross in a morning and varied enough to need a month. These are the ten places we keep coming back to — and when to go." />
+
+  <section class="section !pt-16" data-filter-group>
+    <div class="wrap">
+      <div class="mb-6 grid gap-6 lg:grid-cols-12">
+        <p class="label lg:col-span-3" data-reveal>(01) All destinations</p>
+        <p class="headline text-3xl sm:text-4xl lg:col-span-9" data-words>Four languages, 26 cantons and about 5,000 km of railway. Pick a region, or let us join three of them into one week.</p>
+      </div>
+      <div class="mt-12"><FilterChips options={['Mountains', 'Lakes', 'Cities']} label="Filter destinations" /></div>
+      <ol class="border-t hair">
+        {destinations.map((d, i) => (
+          <li id={d.id} class="grid scroll-mt-24 gap-8 border-b hair py-12 md:py-16 lg:grid-cols-12 lg:gap-12" data-item data-tags={d.type}>
+            <div class:list={['img-zoom aspect-[4/3] overflow-hidden rounded-sm lg:col-span-6', i % 2 === 1 && 'lg:order-2']} data-reveal>
+              <Img photo={d.img} ratio={0.75} sizes="(min-width:1024px) 46vw, 100vw" widths={[480, 800, 1200, 1600]} />
+            </div>
+            <div class="flex flex-col lg:col-span-6">
+              <p class="flex gap-4 font-mono text-xs text-slate-400"><span class="text-alpenglow">{String(i + 1).padStart(2, '0')}</span> {d.region} · {d.type}</p>
+              <h2 class="display mt-5 text-5xl md:text-7xl" data-reveal>{d.name}</h2>
+              <p class="mt-5 text-xl font-medium tracking-tight">{d.lede}</p>
+              <p class="mt-3 max-w-xl text-slate-400">{d.body}</p>
+              <dl class="mt-8 grid gap-px overflow-hidden rounded-sm border hair bg-ink-800 text-sm sm:grid-cols-3">
+                <div class="bg-ink-950 p-4"><dt class="label !text-[0.68rem]">Best season</dt><dd class="mt-2">{d.season}</dd></div>
+                <div class="bg-ink-950 p-4"><dt class="label !text-[0.68rem]">Altitude</dt><dd class="mt-2">{d.altitude}</dd></div>
+                <div class="bg-ink-950 p-4"><dt class="label !text-[0.68rem]">Getting there</dt><dd class="mt-2">{d.arrive}</dd></div>
+              </dl>
+              <p class="label mt-8 mb-3">Don’t miss</p>
+              <ul class="space-y-2">
+                {d.dontMiss.map((x) => <li class="flex gap-3"><span class="mt-2.5 h-1 w-3 shrink-0 bg-alpenglow"></span>{x}</li>)}
+              </ul>
+              <div class="mt-8 lg:mt-auto lg:pt-8"><TextLink href="/contact/">Plan a week here</TextLink></div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <ClosingCta lines={['Three regions.', 'One week.', 'Zero timetables.']} cta="Build my route" />
+</Base>

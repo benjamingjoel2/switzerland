@@ -1,0 +1,16 @@
+---
+import Faq from '../Faq.astro';
+import Pill from '../Pill.astro';
+import { faqs } from '../../data/site';
+---
+<section class="section border-t hair bg-ink-900" id="questions">
+  <div class="wrap grid gap-12 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <p class="label mb-8" data-reveal>(11) Questions</p>
+      <h2 class="display text-6xl lg:text-7xl"><span data-mask><span>Before</span></span><span data-mask style="--d:90ms"><span>you book</span></span></h2>
+      <p class="mt-6 max-w-xs text-slate-400" data-reveal>A real person in Interlaken answers within one working day.</p>
+      <div class="mt-8" data-reveal><Pill href="/travel-tips/" variant="ghost">All travel tips</Pill></div>
+    </div>
+    <div class="lg:col-span-7 lg:col-start-6"><Faq items={faqs} /></div>
+  </div>
+</section>

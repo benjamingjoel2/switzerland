@@ -1,0 +1,31 @@
+---
+import Img from '../Img.astro';
+import TextLink from '../TextLink.astro';
+---
+<section class="pb-24 md:pb-40" id="about">
+  <div class="wrap">
+    <div class="grid border-t hair lg:grid-cols-2">
+      <div class="img-zoom aspect-[4/5] overflow-hidden pt-6 lg:mr-8 lg:aspect-auto lg:pt-8" data-reveal>
+        <Img photo="who-chalet" sizes="(min-width:1024px) 50vw, 100vw" class="rounded-sm" />
+      </div>
+      <div class="pt-10 lg:border-l hair lg:pt-8 lg:pl-8">
+        <p class="label mb-8" data-reveal>(02) Who we are</p>
+        <h2 class="headline text-[2rem] sm:text-4xl xl:text-[2.75rem]" data-reveal>
+          A travel company run by mountain people, not marketers.
+          <span class="text-slate-400">We only go where we’d go on our own weekends, eat what the valley makes, and plan every connection so you never look at a timetable.</span>
+        </h2>
+        <div class="mt-10" data-reveal><TextLink href="/contact/">Talk to us</TextLink></div>
+        <div class="mt-16 grid grid-cols-2 border-t hair">
+          <div class="pt-8 pr-6" data-reveal>
+            <p class="display text-6xl md:text-8xl">4.9</p>
+            <p class="mt-4 text-sm text-slate-400">average rating from 1,480 guests</p>
+          </div>
+          <div class="border-l hair pt-8 pl-6" data-reveal style="--d:120ms">
+            <p class="display text-6xl md:text-8xl">0</p>
+            <p class="mt-4 text-sm text-slate-400">missed connections in 2025. We checked.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import Img from '../Img.astro';
+import SectionHead from '../SectionHead.astro';
+import { journal } from '../../data/site';
+---
+<section class="section border-t hair" id="journal">
+  <div class="wrap">
+    <SectionHead n="12" label="Journal" title={['Field', 'notes']} link={{ href: '/travel-tips/', text: 'All travel tips' }} />
+    <div class="grid gap-10 md:grid-cols-3 md:gap-4">
+      {journal.map((a, i) => (
+        <a href={a.href} class="group" data-reveal style={`--d:${i * 90}ms`}>
+          <div class="img-zoom aspect-[4/3] overflow-hidden rounded-sm"><Img photo={a.img} ratio={0.75} sizes="(min-width:768px) 32vw, 100vw" widths={[400, 640, 900, 1200]} /></div>
+          <p class="mt-5 flex justify-between font-mono text-xs text-slate-400"><span>{a.tag}</span><span>{a.read}</span></p>
+          <h3 class="mt-3 text-2xl font-semibold leading-tight tracking-[-0.03em] transition-colors group-hover:text-limestone">{a.title}</h3>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

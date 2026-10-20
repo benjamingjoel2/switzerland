@@ -1,0 +1,10 @@
+---
+interface Props { options: string[]; label: string; }
+const { options, label } = Astro.props;
+---
+<div class="mb-10 flex flex-wrap gap-2" role="group" aria-label={label} data-reveal>
+  {['All', ...options].map((o, i) => (
+    <button data-filter={o} aria-pressed={i === 0 ? 'true' : 'false'}
+      class="rounded-full border hair px-5 py-2 text-sm text-slate-400 transition-colors hover:border-snow/50 hover:text-snow aria-pressed:border-snow aria-pressed:bg-snow aria-pressed:text-ink-950">{o}</button>
+  ))}
+</div>

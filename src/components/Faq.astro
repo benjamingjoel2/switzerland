@@ -1,0 +1,20 @@
+---
+interface Props { items: { q: string; a: string }[]; }
+const { items } = Astro.props;
+---
+<div class="border-t hair">
+  {items.map((f, i) => (
+    <div class="acc border-b hair" data-reveal style={`--d:${i * 60}ms`}>
+      <h3>
+        <button class="flex w-full items-center gap-5 py-6 text-left" aria-expanded="false" aria-controls={`faq-${f.q.length}-${i}`}>
+          <span class="font-mono text-xs text-slate-500">{String(i + 1).padStart(2, '0')}</span>
+          <span class="flex-1 text-lg font-semibold tracking-tight md:text-xl">{f.q}</span>
+          <span class="acc-plus text-2xl font-light leading-none" aria-hidden="true">+</span>
+        </button>
+      </h3>
+      <div class="acc-body" id={`faq-${f.q.length}-${i}`}>
+        <div class="overflow-hidden"><p class="max-w-2xl pb-7 pl-9 text-slate-400">{f.a}</p></div>
+      </div>
+    </div>
+  ))}
+</div>

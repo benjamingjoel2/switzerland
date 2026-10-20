@@ -1,0 +1,379 @@
+{
+ "hero-zermatt": [
+  "matterhorn-zermatt",
+  0,
+  "Matterhorn, Zermatt"
+ ],
+ "hero-lauterbrunnen": [
+  "lauterbrunnen",
+  0,
+  "Lauterbrunnen"
+ ],
+ "hero-lucerne": [
+  "lake-lucerne",
+  5,
+  "Lake Lucerne"
+ ],
+ "hero-lugano": [
+  "lugano",
+  1,
+  "Lugano"
+ ],
+ "idea-peaks": [
+  "aletsch-glacier",
+  3,
+  "Aletsch Glacier"
+ ],
+ "idea-lakes": [
+  "oeschinensee",
+  0,
+  "Oeschinensee"
+ ],
+ "idea-rails": [
+  "bernina-express",
+  3,
+  "Brusio, Bernina line"
+ ],
+ "who-chalet": [
+  "swiss-chalet",
+  8,
+  "Kandersteg"
+ ],
+ "j-matterhorn": [
+  "matterhorn-zermatt",
+  11,
+  "Stellisee, Zermatt"
+ ],
+ "j-jungfrau": [
+  "grindelwald",
+  1,
+  "Grindelwald"
+ ],
+ "j-glacier": [
+  "glacier-express",
+  1,
+  "Glacier Express",
+  "verify"
+ ],
+ "j-lucerne": [
+  "rigi",
+  0,
+  "Rigi, Lake Lucerne"
+ ],
+ "j-ticino": [
+  "ticino",
+  2,
+  "Morcote, Ticino"
+ ],
+ "j-rails": [
+  "lavaux-vineyards",
+  6,
+  "Lavaux"
+ ],
+ "how-banner": [
+  "landwasser-viaduct",
+  9,
+  "Landwasser Viaduct"
+ ],
+ "day-sunrise": [
+  "eiger",
+  4,
+  "Kleine Scheidegg"
+ ],
+ "day-breakfast": [
+  "swiss-cows-alps",
+  2,
+  "Swiss Alps",
+  "verify"
+ ],
+ "day-walk": [
+  "eiger",
+  9,
+  "Bernese Oberland",
+  "verify"
+ ],
+ "day-lunch": [
+  "swiss-chalet",
+  5,
+  "Bernese Oberland",
+  "verify"
+ ],
+ "day-free": [
+  "bachalpsee",
+  1,
+  "Bachalpsee"
+ ],
+ "day-apero": [
+  "grindelwald",
+  0,
+  "Grindelwald"
+ ],
+ "day-fondue": [
+  "swiss-fondue",
+  2,
+  "Fondue",
+  "verify"
+ ],
+ "day-stars": [
+  "grindelwald",
+  7,
+  "Grindelwald",
+  "verify"
+ ],
+ "p-zermatt": [
+  "zermatt-village",
+  5,
+  "Zermatt"
+ ],
+ "p-jungfrau": [
+  "lauterbrunnen",
+  4,
+  "Lauterbrunnen"
+ ],
+ "p-lucerne": [
+  "lucerne-chapel-bridge",
+  0,
+  "Chapel Bridge, Lucerne"
+ ],
+ "p-lugano": [
+  "lake-lugano",
+  9,
+  "Lake Lugano"
+ ],
+ "d-zermatt": [
+  "zermatt-village",
+  10,
+  "Zermatt"
+ ],
+ "d-jungfrau": [
+  "lauterbrunnen",
+  10,
+  "Wengen"
+ ],
+ "d-lucerne": [
+  "lucerne-chapel-bridge",
+  9,
+  "Lucerne"
+ ],
+ "d-geneva": [
+  "chillon-castle",
+  1,
+  "Chillon Castle, Montreux"
+ ],
+ "d-lugano": [
+  "lake-lugano",
+  2,
+  "Lugano"
+ ],
+ "d-bern": [
+  "bern-old-town",
+  0,
+  "Bern old town"
+ ],
+ "d-zurich": [
+  "zurich-old-town",
+  0,
+  "Zurich"
+ ],
+ "d-stmoritz": [
+  "st-moritz",
+  0,
+  "St. Moritz"
+ ],
+ "d-appenzell": [
+  "appenzell",
+  2,
+  "Seealpsee, Appenzell"
+ ],
+ "d-basel": [
+  "basel-rhine",
+  0,
+  "Basel"
+ ],
+ "g-reto": [
+  "matterhorn-zermatt",
+  8,
+  "Zermatt"
+ ],
+ "g-annina": [
+  "landwasser-viaduct",
+  6,
+  "Landwasser Viaduct"
+ ],
+ "g-lena": [
+  "swiss-cows-alps",
+  10,
+  "Swiss Alps",
+  "verify"
+ ],
+ "g-matteo": [
+  "lugano",
+  11,
+  "Lugano",
+  "verify"
+ ],
+ "t-gornergrat": [
+  "gornergrat",
+  1,
+  "Gornergrat"
+ ],
+ "t-jungfraujoch": [
+  "jungfraujoch",
+  5,
+  "Jungfraujoch"
+ ],
+ "t-glacier": [
+  "glacier-express",
+  1,
+  "Glacier Express"
+ ],
+ "t-bernina": [
+  "glacier-express",
+  5,
+  "Alp Grüm, Bernina line"
+ ],
+ "t-oeschinensee": [
+  "oeschinensee",
+  4,
+  "Oeschinensee"
+ ],
+ "t-lucerne": [
+  "lake-lucerne",
+  1,
+  "Lake Lucerne",
+  "verify"
+ ],
+ "t-verzasca": [
+  "ticino",
+  1,
+  "Verzasca, Ticino"
+ ],
+ "t-lavaux": [
+  "lavaux-vineyards",
+  9,
+  "Lavaux"
+ ],
+ "t-fondue": [
+  "swiss-fondue",
+  0,
+  "Fondue",
+  "verify"
+ ],
+ "t-raclette": [
+  "raclette-cheese",
+  4,
+  "Raclette",
+  "verify"
+ ],
+ "t-chocolate": [
+  "swiss-chocolate",
+  3,
+  "Swiss chocolate",
+  "verify"
+ ],
+ "t-fasnacht": [
+  "basel-fasnacht",
+  5,
+  "Basel Fasnacht"
+ ],
+ "t-nationalday": [
+  "swiss-national-day",
+  5,
+  "Swiss flag",
+  "verify"
+ ],
+ "t-alpabzug": [
+  "swiss-cows-alps",
+  5,
+  "Alpine cattle",
+  "verify"
+ ],
+ "t-skiing": [
+  "verbier-skiing",
+  5,
+  "Verbier"
+ ],
+ "t-paragliding": [
+  "interlaken-paragliding",
+  3,
+  "Interlaken"
+ ],
+ "t-aletsch": [
+  "aletsch-glacier",
+  7,
+  "Aletsch Glacier"
+ ],
+ "t-appenzell": [
+  "appenzell",
+  0,
+  "Aescher, Appenzell"
+ ],
+ "t-bern": [
+  "bern-old-town",
+  2,
+  "Bern"
+ ],
+ "tips-sbb": [
+  "swiss-train-station-sbb",
+  6,
+  "SBB train",
+  "verify"
+ ],
+ "tips-sign": [
+  "swiss-hiking-trail-sign",
+  4,
+  "Swiss trail sign",
+  "verify"
+ ],
+ "hero-destinations": [
+  "bachalpsee",
+  2,
+  "Bachalpsee"
+ ],
+ "hero-things": [
+  "jungfraujoch",
+  1,
+  "Jungfrau Railway",
+  "verify"
+ ],
+ "hero-tips": [
+  "zermatt-village",
+  7,
+  "Zermatt at night",
+  "verify"
+ ],
+ "hero-contact": [
+  "swiss-chalet",
+  0,
+  "Swiss chalet",
+  "verify"
+ ],
+ "jr-pass": [
+  "landwasser-viaduct",
+  10,
+  "Landwasser Viaduct"
+ ],
+ "jr-fondue": [
+  "swiss-fondue",
+  3,
+  "Fondue",
+  "verify"
+ ],
+ "jr-autumn": [
+  "st-moritz",
+  9,
+  "Engadin",
+  "verify"
+ ],
+ "cta-bg": [
+  "rigi",
+  5,
+  "Rigi above the clouds",
+  "verify"
+ ],
+ "og": [
+  "matterhorn-zermatt",
+  11,
+  "Matterhorn"
+ ]
+}

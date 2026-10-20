@@ -1,0 +1,46 @@
+---
+import Img from '../Img.astro';
+import Pill from '../Pill.astro';
+import { heroScenes } from '../../data/site';
+---
+<section class="relative isolate h-[100svh] min-h-[640px] overflow-hidden bg-ink-950" data-hero aria-label="Swiss Horizon — featured places">
+  {heroScenes.map((s, i) => (
+    <div class:list={['scene absolute inset-0 -z-10', i === 0 && 'active']} aria-hidden={i !== 0 ? 'true' : 'false'}>
+      <Img photo={s.img} priority={i === 0} sizes="100vw" widths={[640, 960, 1440, 1920, 2560]} />
+    </div>
+  ))}
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/35 to-ink-950/50"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950/55 to-transparent"></div>
+
+  <div class="wrap flex h-full flex-col justify-end pb-36 md:pb-44">
+    <div class="grid items-end gap-10 lg:grid-cols-12">
+      <h1 class="display text-[clamp(3.5rem,11vw,10.5rem)] lg:col-span-8">
+        <span data-mask><span>Higher.</span></span>
+        <span data-mask style="--d:120ms"><span>Slower.</span></span>
+        <span data-mask style="--d:240ms"><span>Swiss.</span></span>
+      </h1>
+      <div class="lg:col-span-4 lg:pl-6" data-reveal style="--d:400ms">
+        <p class="mb-8 max-w-sm text-lg leading-snug text-snow/90 md:text-xl">
+          Small-group journeys through the Alps and lakes of Switzerland. Rail-first, hut nights, long lunches — ten guests at most, every train already booked.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <Pill href="/destinations/">Explore destinations</Pill>
+          <Pill href="#departures" variant="ghost">Dates</Pill>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute inset-x-0 bottom-0 border-t border-snow/15" role="tablist" aria-label="Places">
+    <div class="mx-auto grid max-w-[1440px] grid-cols-4">
+      {heroScenes.map((s, i) => (
+        <button role="tab" aria-selected={i === 0 ? 'true' : 'false'} class:list={['tab group relative border-snow/15 px-3 pt-4 pb-5 text-left md:px-10 md:pt-6 md:pb-7', i > 0 && 'border-l']}>
+          <span class="absolute inset-x-0 -top-px h-px overflow-hidden"><span class="tab-bar block h-full bg-snow"></span></span>
+          <span class="label block !text-[0.68rem] md:!text-xs">{s.n}</span>
+          <span class="mt-1 block truncate text-sm font-semibold tracking-tight text-snow/50 transition-colors group-[.active]:text-snow md:mt-2 md:text-xl">{s.place}</span>
+          <span class="mt-1 hidden truncate text-sm text-snow/40 transition-colors group-[.active]:text-snow/80 md:block">{s.line}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>

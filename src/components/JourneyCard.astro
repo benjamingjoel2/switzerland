@@ -1,0 +1,40 @@
+---
+import Img from './Img.astro';
+import Arrow from './Arrow.astro';
+import type { Journey } from '../data/site';
+interface Props { j: Journey; }
+const { j } = Astro.props;
+---
+<article class="group flex flex-col rounded-md border hair bg-ink-900/60 p-3 transition-colors duration-500 hover:border-ink-700" data-item data-tags={j.theme}>
+  <a href={`/contact/?journey=${j.slug}`} class="flex h-full flex-col" aria-label={`${j.title} — request this journey`}>
+    <div class="img-zoom relative aspect-[4/3] overflow-hidden rounded-sm">
+      <Img photo={j.img} ratio={0.75} sizes="(min-width:1024px) 31vw, (min-width:640px) 48vw, 100vw" widths={[400, 640, 900, 1200]} />
+      <span class="absolute top-3 left-3 rounded-full bg-ink-950/75 px-3 py-1 font-mono text-[0.68rem] tracking-wider uppercase backdrop-blur">{j.theme}</span>
+    </div>
+    <div class="flex flex-1 flex-col px-2 pt-5 pb-2">
+      <div class="flex items-start justify-between gap-4">
+        <h3 class="text-2xl font-semibold leading-tight tracking-[-0.03em]">{j.title}</h3>
+        <p class="shrink-0 text-right text-xs text-slate-400">from<br /><span class="text-base font-semibold text-snow">{j.price}</span></p>
+      </div>
+      <p class="mt-2 text-slate-400">{j.place}</p>
+      <dl class="mt-6 grid grid-cols-2 gap-y-2 border-t hair pt-4 font-mono text-xs text-slate-400">
+        <dt class="sr-only">Dates</dt><dd>{j.dates}</dd>
+        <dt class="sr-only">Length</dt><dd class="text-right">{j.nights} nights</dd>
+        <dt class="sr-only">Group size</dt><dd>Max {j.max} guests</dd>
+        <dt class="sr-only">Availability</dt>
+        <dd class:list={['text-right', j.low ? 'text-alpenglow' : j.status === 'Waitlist' ? 'text-slate-500' : 'text-glacier']}>{j.status}</dd>
+      </dl>
+      <div class="mt-5 flex items-center gap-3">
+        <span class="text-xs text-slate-400">Easy</span>
+        <span class="flex flex-1 gap-1" aria-label={`Effort ${j.effort} of 5`}>
+          {[1, 2, 3, 4, 5].map((n) => <span class:list={['h-1 flex-1 rounded-full', n <= j.effort ? 'bg-snow' : 'bg-ink-700']}></span>)}
+        </span>
+        <span class="text-xs text-slate-400">Alpine</span>
+      </div>
+      <div class="mt-auto flex items-center justify-between pt-6">
+        <span class="font-mono text-xs text-slate-400">Effort {j.effort} / 5</span>
+        <span class="inline-flex items-center gap-3 text-sm font-medium">Request <span class="chip !h-8 !w-8 bg-snow text-ink-950"><Arrow /></span></span>
+      </div>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,6 @@
+---
+import Arrow from './Arrow.astro';
+interface Props { href: string; class?: string; }
+const { href, class: cls = '' } = Astro.props;
+---
+<a href={href} class={`tlink ${cls}`}><slot /><span class="arr"><Arrow dir="e" size={13} /></span></a>

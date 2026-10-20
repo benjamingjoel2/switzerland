@@ -1,0 +1,43 @@
+---
+import Img from '../Img.astro';
+import { day } from '../../data/site';
+const first = day.rows[0];
+---
+<section class="section border-t hair bg-ink-900" id="day" data-day>
+  <div class="wrap grid gap-12 lg:grid-cols-2">
+    <div class="lg:sticky lg:top-24 lg:h-fit">
+      <p class="label mb-8" data-reveal>(05) A day here</p>
+      <h2 class="display text-5xl sm:text-6xl lg:text-[3.6rem]">
+        <span data-mask><span>{day.title.split(' on ')[0]} on</span></span>
+        <span data-mask style="--d:90ms"><span>{day.title.split(' on ')[1]}</span></span>
+      </h2>
+      <p class="mt-6 max-w-md text-lg text-slate-400" data-reveal>{day.intro}</p>
+      <div class="mt-8 hidden max-w-[300px] lg:block" aria-hidden="true">
+        <svg viewBox="0 0 400 200" class="w-full overflow-visible">
+          <path d="M20 190a180 180 0 0 1 360 0" fill="none" stroke="#EEF1EE" stroke-opacity=".5" stroke-dasharray="2 5" />
+          <line x1="0" y1="190" x2="400" y2="190" stroke="#2A3943" />
+          <circle data-sun cx="20" cy="190" r="9" fill="#E0402F" style="transition: cx .9s cubic-bezier(.22,1,.36,1), cy .9s cubic-bezier(.22,1,.36,1)" />
+          <circle cx="120" cy="40" r="1.2" fill="#EEF1EE" /><circle cx="300" cy="28" r="1" fill="#EEF1EE" /><circle cx="355" cy="80" r="1.4" fill="#EEF1EE" /><circle cx="60" cy="95" r="1" fill="#EEF1EE" />
+        </svg>
+      </div>
+      <div class="mt-6 hidden items-end gap-6 border-t hair pt-4 lg:flex">
+        <p class="display text-[7rem] tabular-nums leading-none" data-day-clock aria-hidden="true">{first.t}</p>
+        <p class="label pb-4" data-day-label aria-hidden="true">{first.title}</p>
+      </div>
+    </div>
+    <ol class="border-t hair lg:border-t-0 lg:border-l lg:pl-0">
+      {day.rows.map((r) => (
+        <li class="day-row grid grid-cols-[4rem_1fr] gap-4 border-b hair py-8 sm:grid-cols-[5rem_1fr_6rem] md:py-12 lg:pl-8" data-time={r.t} data-title={r.title}>
+          <p class="font-mono text-sm text-slate-400">{r.t}</p>
+          <div>
+            <h3 class="text-xl font-semibold tracking-tight md:text-2xl">{r.title}</h3>
+            <p class="mt-2 max-w-md text-slate-400">{r.text}</p>
+          </div>
+          <div class="col-start-2 aspect-[4/3] w-32 overflow-hidden rounded-sm sm:col-start-3 sm:aspect-square sm:w-auto">
+            <Img photo={r.img} ratio={1} sizes="128px" widths={[160, 256, 320]} />
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

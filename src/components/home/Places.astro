@@ -1,0 +1,32 @@
+---
+import Img from '../Img.astro';
+import SectionHead from '../SectionHead.astro';
+import { places } from '../../data/site';
+---
+<section class="section" id="places">
+  <div class="wrap">
+    <SectionHead n="06" label="Destinations" title={['Explore', 'by region']} link={{ href: '/destinations/', text: 'All ten destinations' }} />
+  </div>
+  <div class="wrap">
+    <div class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-6 [scrollbar-width:thin] md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 xl:grid-cols-4">
+      {places.map((p, i) => (
+        <a href={`/destinations/#${p.name.toLowerCase().replace(/[^a-z]+/g, '-')}`} class="group w-[82vw] shrink-0 snap-start sm:w-[60vw] md:w-auto" data-reveal style={`--d:${i * 90}ms`}>
+          <div class="img-zoom relative aspect-[3/4] overflow-hidden rounded-sm">
+            <Img photo={p.img} ratio={4 / 3} sizes="(min-width:1280px) 24vw, (min-width:768px) 48vw, 82vw" widths={[400, 640, 900, 1200]} />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-transparent to-transparent"></div>
+            <div class="absolute inset-x-5 bottom-5">
+              <p class="label !text-snow/70">{p.country}</p>
+              <h3 class="mt-2 text-3xl font-semibold tracking-[-0.04em]">{p.name}</h3>
+              <p class="mt-1 text-sm text-snow/70">{p.region}</p>
+            </div>
+          </div>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between gap-4 border-b hair pb-3"><dt class="text-slate-400">Best season</dt><dd class="text-right">{p.season}</dd></div>
+            <div class="flex justify-between gap-4 border-b hair pb-3"><dt class="text-slate-400">{p.k2}</dt><dd class="text-right">{p.v2}</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-slate-400">Airport</dt><dd class="text-right">{p.airport}</dd></div>
+          </dl>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

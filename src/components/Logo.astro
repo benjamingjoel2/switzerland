@@ -1,0 +1,16 @@
+---
+interface Props { class?: string; }
+const { class: cls = '' } = Astro.props;
+---
+<a href="/" class={`inline-flex items-center gap-2.5 ${cls}`} aria-label="Swiss Horizon — home">
+  <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" class="shrink-0">
+    <defs><clipPath id="lg-c"><circle cx="16" cy="16" r="14.25" /></clipPath></defs>
+    <g clip-path="url(#lg-c)">
+      <rect x="0" y="21" width="32" height="11" fill="#E0402F" />
+      <path d="M2 21 11.5 11.5l3 3.2L18 9.5 30 21z" fill="currentColor" />
+      <path d="M17.6 11.2v3.6M15.8 13h3.6" stroke="#0B1114" stroke-width="1.3" />
+    </g>
+    <circle cx="16" cy="16" r="14.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+  </svg>
+  <span class="text-[1.2rem] font-semibold tracking-[-0.04em]">Swiss Horizon</span>
+</a>

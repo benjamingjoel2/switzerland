@@ -1,0 +1,28 @@
+---
+import Icon from '../Icon.astro';
+import { included, notIncluded } from '../../data/site';
+---
+<section class="section border-t hair" id="included">
+  <div class="wrap">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <p class="label lg:col-span-3" data-reveal>(10) Included</p>
+      <h2 class="display text-[3.5rem] sm:text-7xl lg:col-span-9 lg:text-[8rem]">
+        <span data-mask><span>One price.</span></span>
+        <span data-mask style="--d:100ms"><span class="text-slate-400">Bring a jacket.</span></span>
+      </h2>
+    </div>
+    <ul class="mt-16 grid grid-cols-2 gap-px border-y hair bg-ink-800 lg:grid-cols-4">
+      {included.map((it, i) => (
+        <li class="bg-ink-950 px-4 py-8 md:px-6" data-reveal style={`--d:${(i % 4) * 80}ms`}>
+          <span class="text-alpenglow"><Icon name={it.icon} /></span>
+          <h3 class="mt-8 text-lg font-semibold tracking-tight md:text-xl">{it.title}</h3>
+          <p class="mt-2 text-sm text-slate-400">{it.text}</p>
+        </li>
+      ))}
+    </ul>
+    <div class="flex flex-wrap items-baseline gap-x-8 gap-y-3 pt-8">
+      <p class="text-lg font-semibold">Not included</p>
+      {notIncluded.map((n) => <p class="text-slate-400">{n}</p>)}
+    </div>
+  </div>
+</section>

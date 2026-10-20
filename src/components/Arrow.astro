@@ -1,0 +1,6 @@
+---
+interface Props { dir?: 'ne' | 'e' | 'w'; size?: number; }
+const { dir = 'ne', size = 12 } = Astro.props;
+const d = { ne: 'M4 12 12 4M5.5 4H12v6.5', e: 'M2 8h12M9 3l5 5-5 5', w: 'M14 8H2M7 3 2 8l5 5' }[dir];
+---
+<svg width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d={d} /></svg>

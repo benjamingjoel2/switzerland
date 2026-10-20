@@ -1,0 +1,193 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Img from '../components/Img.astro';
+import Faq from '../components/Faq.astro';
+import ClosingCta from '../components/ClosingCta.astro';
+
+const toc = [
+  { id: 'getting-around', label: 'Getting around' },
+  { id: 'money', label: 'Money' },
+  { id: 'entry', label: 'Entry & visas' },
+  { id: 'seasons', label: 'Seasons' },
+  { id: 'etiquette', label: 'Etiquette' },
+  { id: 'packing', label: 'Packing' },
+  { id: 'budget', label: 'Budget' },
+  { id: 'essentials', label: 'Essentials' },
+];
+
+const seasons = [
+  { m: 'Dec — Mar', name: 'Winter', temp: '−5 to 5°C valleys', good: 'Skiing, sledging, Glacier Express in snow, Christmas markets', note: 'Many high hiking trails closed' },
+  { m: 'Apr — May', name: 'Spring', temp: '8 to 18°C', good: 'Lakes, cities, blossom in Ticino and Lavaux', note: 'High passes still snowbound; some lifts close for maintenance' },
+  { m: 'Jun — Aug', name: 'Summer', temp: '18 to 28°C valleys', good: 'Hiking, lake swims, all mountain railways open', note: 'Busiest season; book trains and huts early' },
+  { m: 'Sep — Oct', name: 'Autumn', temp: '8 to 20°C', good: 'Clear air, golden larches, cattle descents, grape harvest', note: 'Our favourite: fewer people, stable weather' },
+  { m: 'Nov', name: 'Late autumn', temp: '0 to 10°C', good: 'Cities, museums, thermal baths', note: 'Quietest month; many mountain lifts closed' },
+];
+
+const budget = [
+  { item: 'Coffee in a café', price: 'CHF 4.50 – 6' },
+  { item: 'Lunch menu of the day', price: 'CHF 20 – 30' },
+  { item: 'Fondue dinner per person', price: 'CHF 30 – 45' },
+  { item: 'Mid-range double room', price: 'CHF 200 – 350' },
+  { item: 'Jungfraujoch return from Interlaken', price: 'CHF 200+ (discounts with passes)' },
+  { item: 'Bottle of water, supermarket', price: 'CHF 1 – 2 (tap water is free and excellent)' },
+];
+
+const extraFaqs = [
+  { q: 'Is the Swiss Travel Pass worth it?', a: 'If you plan to move most days and take boats and mountain trains, usually yes: it covers trains, buses, boats and many museums, plus discounts on most mountain railways. If you will stay in one place, the Half Fare Card (50% off most tickets for a month) is often cheaper. Price both against your actual route.' },
+  { q: 'Can I drink the tap water?', a: 'Yes. Swiss tap water is clean and tested, and public fountains marked without a “Kein Trinkwasser / Eau non potable” sign are safe to drink from. Bring a bottle.' },
+  { q: 'Which language should I use?', a: 'German in the north and centre, French in the west, Italian in Ticino and Romansh in parts of Graubünden. English is widely spoken in tourist areas. A “Grüezi”, “Bonjour” or “Buongiorno” goes a long way.' },
+  { q: 'Do shops open on Sundays?', a: 'Mostly not. Supermarkets at large train stations and airports stay open, as do many shops in tourist resorts. Plan picnics on Saturday.' },
+];
+---
+<Base title="Switzerland Travel Tips" description="Practical Switzerland travel tips: Swiss Travel Pass vs Half Fare Card, Swiss francs and card payments, entry and visa basics, best time to visit, etiquette, packing and typical prices." ogSlot="hero-tips">
+  <PageHero photo="hero-tips" label="Travel tips" title={['Know before', 'you go.']}
+    intro="The practical bits — trains, money, seasons and manners — from people who live here. Entry rules change: always confirm visa details on official sites." />
+
+  <div class="wrap grid gap-12 py-16 md:py-24 lg:grid-cols-12">
+    <aside class="lg:col-span-3">
+      <nav class="lg:sticky lg:top-28" aria-label="On this page">
+        <p class="label mb-4">On this page</p>
+        <ol class="flex flex-wrap gap-2 lg:flex-col lg:gap-0">
+          {toc.map((t, i) => (
+            <li><a href={`#${t.id}`} class="flex gap-3 rounded-full border hair px-4 py-1.5 text-sm text-slate-400 transition-colors hover:text-snow lg:rounded-none lg:border-0 lg:border-b lg:px-0 lg:py-3"><span class="font-mono text-xs text-alpenglow">{String(i + 1).padStart(2, '0')}</span>{t.label}</a></li>
+          ))}
+        </ol>
+      </nav>
+    </aside>
+
+    <div class="space-y-24 lg:col-span-9 md:space-y-32">
+      <section id="getting-around" class="scroll-mt-28">
+        <p class="label mb-6" data-reveal>(01) Getting around</p>
+        <h2 class="display text-5xl md:text-7xl"><span data-mask><span>Take the train.</span></span><span data-mask style="--d:90ms"><span class="text-slate-400">Seriously.</span></span></h2>
+        <p class="mt-6 max-w-2xl text-lg text-slate-400" data-reveal>Trains, buses, boats and mountain railways run on one connected, clock-face timetable. You rarely wait more than a few minutes for a connection, and you never need a car.</p>
+        <div class="mt-10 grid gap-px overflow-hidden rounded-sm border hair bg-ink-800 md:grid-cols-2">
+          <div class="bg-ink-950 p-6 md:p-8" data-reveal>
+            <h3 class="text-2xl font-semibold tracking-tight">Swiss Travel Pass</h3>
+            <p class="mt-3 text-slate-400">Unlimited travel on trains, buses and boats for 3, 4, 6, 8 or 15 consecutive days, plus free entry to many museums and discounts on most mountain railways.</p>
+            <p class="mt-4 text-sm"><span class="text-alpenglow">Best for:</span> moving most days, boats and scenic trains.</p>
+          </div>
+          <div class="bg-ink-950 p-6 md:p-8" data-reveal style="--d:100ms">
+            <h3 class="text-2xl font-semibold tracking-tight">Half Fare Card</h3>
+            <p class="mt-3 text-slate-400">Pay once, then get about 50% off most train, bus, boat and many mountain tickets for a month.</p>
+            <p class="mt-4 text-sm"><span class="text-alpenglow">Best for:</span> staying in one or two bases with a few big excursions.</p>
+          </div>
+        </div>
+        <div class="mt-10 grid items-start gap-8 md:grid-cols-2">
+          <div class="img-zoom aspect-[4/3] overflow-hidden rounded-sm" data-reveal><Img photo="tips-sbb" ratio={0.75} sizes="(min-width:768px) 36vw, 100vw" widths={[400, 640, 900, 1200]} /></div>
+          <ul class="space-y-5">
+            <li class="border-b hair pb-5" data-reveal><p class="font-semibold">Download the SBB Mobile app</p><p class="mt-1 text-sm text-slate-400">Timetables, platform changes and tickets for the whole network in one place.</p></li>
+            <li class="border-b hair pb-5" data-reveal><p class="font-semibold">Reserve the panoramic trains</p><p class="mt-1 text-sm text-slate-400">Glacier Express and Bernina Express need a paid seat reservation, even with a pass.</p></li>
+            <li class="border-b hair pb-5" data-reveal><p class="font-semibold">Send your luggage ahead</p><p class="mt-1 text-sm text-slate-400">Rail luggage services forward suitcases between stations so you travel with just a daypack.</p></li>
+            <li data-reveal><p class="font-semibold">Look for the yellow signs</p><p class="mt-1 text-sm text-slate-400">Hiking routes are marked with yellow signposts showing walking times, not distances. They are reliable.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="money" class="scroll-mt-28">
+        <p class="label mb-6" data-reveal>(02) Money</p>
+        <h2 class="display text-5xl md:text-7xl"><span data-mask><span>Francs, not euros.</span></span></h2>
+        <div class="mt-10 grid gap-px overflow-hidden rounded-sm border hair bg-ink-800 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ['Currency', 'Swiss franc (CHF). Some places accept euros, but change comes back in francs at a poor rate.'],
+            ['Cards', 'Visa, Mastercard and contactless phone payments work almost everywhere, including most mountain huts.'],
+            ['Cash', 'Carry a little for farm shops, honesty boxes and small huts.'],
+            ['Tipping', 'Service is included by law. Rounding up or adding 5–10% for great service is appreciated, never expected.'],
+          ].map(([h, t], i) => (
+            <div class="bg-ink-950 p-6" data-reveal style={`--d:${i * 80}ms`}><h3 class="font-semibold">{h}</h3><p class="mt-2 text-sm text-slate-400">{t}</p></div>
+          ))}
+        </div>
+      </section>
+
+      <section id="entry" class="scroll-mt-28">
+        <p class="label mb-6" data-reveal>(03) Entry & visas</p>
+        <h2 class="display text-5xl md:text-7xl"><span data-mask><span>Schengen rules apply.</span></span></h2>
+        <div class="mt-8 rounded-sm border border-alpenglow/50 bg-alpenglow/5 p-6 md:p-8" data-reveal>
+          <p class="text-sm font-semibold text-alpenglow">Always check official sources</p>
+          <p class="mt-2 text-slate-400">Entry requirements depend on your nationality and change over time. Confirm the current rules with the Swiss State Secretariat for Migration (SEM) or your nearest Swiss embassy before you book flights.</p>
+        </div>
+        <ul class="mt-8 space-y-5">
+          <li class="border-b hair pb-5" data-reveal><p class="font-semibold">Switzerland is in Schengen, not the EU</p><p class="mt-1 text-slate-400">It applies the common Schengen visa rules. Many visitors, including citizens of the US, Canada, the UK and Australia, can usually stay up to 90 days in any 180-day period without a visa.</p></li>
+          <li class="border-b hair pb-5" data-reveal><p class="font-semibold">Passports</p><p class="mt-1 text-slate-400">Visitors from outside the EU/EFTA generally need a passport valid for at least three months beyond their planned departure from the Schengen Area, issued within the last ten years.</p></li>
+          <li class="border-b hair pb-5" data-reveal><p class="font-semibold">New digital entry systems</p><p class="mt-1 text-slate-400">The EU Entry/Exit System (EES) registers non-EU travellers at Schengen borders, and a pre-travel authorisation (ETIAS) for visa-exempt travellers is planned. Check whether ETIAS applies before your trip.</p></li>
+          <li data-reveal><p class="font-semibold">Travel insurance</p><p class="mt-1 text-slate-400">Healthcare is excellent and expensive. We require insurance that covers mountain rescue and medical repatriation.</p></li>
+        </ul>
+      </section>
+
+      <section id="seasons" class="scroll-mt-28">
+        <p class="label mb-6" data-reveal>(04) Seasons</p>
+        <h2 class="display text-5xl md:text-7xl"><span data-mask><span>When to go.</span></span></h2>
+        <p class="mt-6 max-w-2xl text-lg text-slate-400" data-reveal>Every season works — for different things. Mountain weather can change within an hour at any time of year.</p>
+        <div class="mt-10 overflow-hidden rounded-sm border hair" data-reveal>
+          {seasons.map((s) => (
+            <div class="grid gap-2 border-b hair p-5 last:border-b-0 md:grid-cols-[8rem_7rem_1fr_1fr] md:gap-6">
+              <p class="font-mono text-sm text-alpenglow">{s.m}</p>
+              <p class="font-semibold">{s.name}<span class="block font-mono text-xs font-normal text-slate-400">{s.temp}</span></p>
+              <p class="text-sm">{s.good}</p>
+              <p class="text-sm text-slate-400">{s.note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="etiquette" class="scroll-mt-28">
+        <p class="label mb-6" data-reveal>(05) Etiquette</p>
+        <h2 class="display text-5xl md:text-7xl"><span data-mask><span>Quiet, tidy, on time.</span></span></h2>
+        <div class="mt-10 grid gap-8 md:grid-cols-2">
+          <ul class="space-y-5">
+            {[
+              ['Be punctual', 'Five minutes late is late. Trains leave on the minute.'],
+              ['Sunday is quiet', 'No laundry, mowing or loud music — many neighbourhoods take this seriously.'],
+              ['Recycle properly', 'Glass, PET bottles and paper are separated; bins on trains and at stations show which is which.'],
+              ['Greet people', 'Say hello in shops and on trails: “Grüezi” in the German-speaking areas, “Bonjour” in the French.'],
+              ['On the trail', 'Close gates behind you, keep dogs on a lead near cattle and give cows with calves plenty of room.'],
+            ].map(([h, t], i) => (
+              <li class="border-b hair pb-5" data-reveal style={`--d:${i * 60}ms`}><p class="font-semibold">{h}</p><p class="mt-1 text-sm text-slate-400">{t}</p></li>
+            ))}
+          </ul>
+          <div class="img-zoom aspect-[4/5] overflow-hidden rounded-sm" data-reveal><Img photo="tips-sign" ratio={1.25} sizes="(min-width:768px) 36vw, 100vw" widths={[400, 640, 900, 1200]} /></div>
+        </div>
+      </section>
+
+      <section id="packing" class="scroll-mt-28">
+        <p class="label mb-6" data-reveal>(06) Packing</p>
+        <h2 class="display text-5xl md:text-7xl"><span data-mask><span>Layers. Always layers.</span></span></h2>
+        <ul class="mt-10 grid gap-px overflow-hidden rounded-sm border hair bg-ink-800 sm:grid-cols-2 lg:grid-cols-3">
+          {['Waterproof shell jacket', 'Warm mid-layer, even in July', 'Broken-in walking shoes with grip', 'Sunglasses and SPF 50 — glacier glare is strong', 'Swimwear for lakes and spas', 'Type J plug adapter (Type C plugs also fit)', 'Refillable water bottle', 'Small daypack for travel days', 'A sense of humour about weather'].map((p, i) => (
+            <li class="flex gap-3 bg-ink-950 p-5 text-sm" data-reveal style={`--d:${(i % 3) * 60}ms`}><span class="font-mono text-xs text-alpenglow">{String(i + 1).padStart(2, '0')}</span>{p}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="budget" class="scroll-mt-28">
+        <p class="label mb-6" data-reveal>(07) Budget</p>
+        <h2 class="display text-5xl md:text-7xl"><span data-mask><span>What things cost.</span></span></h2>
+        <p class="mt-6 max-w-2xl text-lg text-slate-400" data-reveal>Switzerland is expensive, but a pass, a picnic and tap water keep it sane. Typical prices, as a rough guide:</p>
+        <table class="mt-10 w-full text-left" data-reveal>
+          <caption class="sr-only">Typical prices in Switzerland</caption>
+          <tbody>
+            {budget.map((b) => <tr class="border-b hair"><th scope="row" class="py-4 pr-4 font-normal">{b.item}</th><td class="py-4 text-right font-mono text-sm text-slate-400">{b.price}</td></tr>)}
+          </tbody>
+        </table>
+      </section>
+
+      <section id="essentials" class="scroll-mt-28">
+        <p class="label mb-6" data-reveal>(08) Essentials</p>
+        <h2 class="display text-5xl md:text-7xl"><span data-mask><span>Good to know.</span></span></h2>
+        <dl class="mt-10 grid gap-px overflow-hidden rounded-sm border hair bg-ink-800 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ['Emergency', '112 (general) · 144 ambulance · 117 police · 118 fire · 1414 Rega air rescue'],
+            ['Languages', 'German, French, Italian and Romansh'],
+            ['Time zone', 'CET (UTC+1), CEST in summer (UTC+2)'],
+            ['Power', '230 V, 50 Hz · Type J sockets'],
+            ['Water', 'Tap and most fountain water is drinkable'],
+            ['Capital', 'Bern (the “federal city”)'],
+          ].map(([k, v]) => <div class="bg-ink-950 p-5"><dt class="label !text-[0.68rem]">{k}</dt><dd class="mt-2 text-sm">{v}</dd></div>)}
+        </dl>
+        <div class="mt-16"><Faq items={extraFaqs} /></div>
+      </section>
+    </div>
+  </div>
+
+  <ClosingCta lines={['Questions left?', 'Ask a local.']} cta="Contact us" />
+</Base>
