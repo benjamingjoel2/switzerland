@@ -225,6 +225,27 @@
   opacity: 1;
 }
 
+/* Hero intro: pure CSS so it plays on first paint, without waiting for JS */
+.hero-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.hero-mask > span {
+  display: block;
+  animation: hero-up 1s var(--ease-out-soft) var(--d, 0ms) both;
+}
+.hero-fade {
+  animation: hero-fade 0.9s var(--ease-out-soft) var(--d, 0ms) both;
+}
+@keyframes hero-up {
+  from { transform: translateY(105%); }
+}
+@keyframes hero-fade {
+  from { opacity: 0.01; transform: translateY(16px); }
+}
+
 /* Hero scenes */
 .scene {
   opacity: 0;

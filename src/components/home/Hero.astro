@@ -6,7 +6,9 @@ import { heroScenes } from '../../data/site';
 <section class="relative isolate h-[100svh] min-h-[640px] overflow-hidden bg-ink-950" data-hero aria-label="Swiss Horizon — featured places">
   {heroScenes.map((s, i) => (
     <div class:list={['scene absolute inset-0 -z-10', i === 0 && 'active']} aria-hidden={i !== 0 ? 'true' : 'false'}>
-      <Img photo={s.img} priority={i === 0} sizes="100vw" widths={[640, 960, 1440, 1920, 2560]} />
+      {i === 0
+        ? <Img photo={s.img} priority sizes="100vw" widths={[640, 1024, 1600, 2200]} />
+        : <template data-defer><Img photo={s.img} sizes="100vw" widths={[640, 1024, 1600, 2200]} /></template>}
     </div>
   ))}
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/35 to-ink-950/50"></div>
@@ -15,10 +17,10 @@ import { heroScenes } from '../../data/site';
   <div class="wrap flex h-full flex-col justify-end pb-36 md:pb-44">
     <div class="grid items-end gap-10 lg:grid-cols-12">
       <h1 class="display text-[clamp(3.25rem,9vw,8.75rem)] lg:col-span-8">
-        <span data-mask><span>Above the clouds.</span></span>
-        <span data-mask style="--d:140ms"><span class="text-snow/60">On schedule.</span></span>
+        <span class="hero-mask"><span>Above the clouds.</span></span>
+        <span class="hero-mask" style="--d:120ms"><span class="text-snow/60">On schedule.</span></span>
       </h1>
-      <div class="lg:col-span-4 lg:pl-6" data-reveal style="--d:400ms">
+      <div class="hero-fade lg:col-span-4 lg:pl-6" style="--d:250ms">
         <p class="mb-8 max-w-sm text-lg leading-snug text-snow/90 md:text-xl">
           Small-group journeys through the Alps and lakes of Switzerland. Rail-first, hut nights, long lunches — ten guests at most, every train already booked.
         </p>

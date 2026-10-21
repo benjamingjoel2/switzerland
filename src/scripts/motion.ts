@@ -114,6 +114,12 @@ addEventListener('resize', onScroll);
 onScroll();
 
 /* ---------- Hero scenes ---------- */
+// Scenes 2–4 ship inside <template> so they don't compete with the first image; mount them once the page has loaded.
+const mountDeferred = () =>
+  $$<HTMLTemplateElement>('template[data-defer]').forEach((t) => t.replaceWith(t.content.cloneNode(true)));
+if (document.readyState === 'complete') mountDeferred();
+else addEventListener('load', mountDeferred, { once: true });
+
 const hero = document.querySelector<HTMLElement>('[data-hero]');
 if (hero) {
   const scenes = $$('.scene', hero);

@@ -1,6 +1,9 @@
 ---
-import { photo, src, srcset } from '../lib/media';
+import { Picture } from 'astro:assets';
+import { photo, src } from '../lib/media';
 
+// Photos are fetched from Unsplash once at build time, then resized and re-encoded
+// (WebP) by Astro and served from this site's own domain.
 interface Props {
   photo: string;
   sizes?: string;
@@ -10,21 +13,26 @@ interface Props {
   priority?: boolean;
   alt?: string;
 }
-const { photo: slotName, sizes = '100vw', ratio, widths = [480, 800, 1200, 1600, 2200], class: cls = '', priority = false, alt } = Astro.props;
+const { photo: slotName, sizes = '100vw', ratio, widths = [480, 800, 1200, 1600], class: cls = '', priority = false, alt } = Astro.props;
 const p = photo(slotName);
 const r = ratio ?? p.height / p.width;
-const fallbackW = widths[Math.min(2, widths.length - 1)];
+const maxW = Math.max(...widths);
+const height = Math.round(maxW * r);
 ---
-<img
-  src={src(p, fallbackW, ratio)}
-  srcset={srcset(p, widths, ratio)}
+<Picture
+  src={src(p, maxW, r, 85)}
+  width={maxW}
+  height={height}
+  widths={widths}
   sizes={sizes}
-  width={fallbackW}
-  height={Math.round(fallbackW * r)}
+  formats={['webp']}
+  fallbackFormat="webp"
+  quality={priority ? 60 : 55}
   alt={alt ?? p.alt}
   loading={priority ? 'eager' : 'lazy'}
   decoding={priority ? 'sync' : 'async'}
   fetchpriority={priority ? 'high' : 'auto'}
   style={`background-color:${p.color}`}
+  pictureAttributes={{ class: 'block h-full w-full' }}
   class={`h-full w-full object-cover ${cls}`}
 />

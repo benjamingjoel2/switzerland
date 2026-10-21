@@ -22,7 +22,7 @@ npm run build    # static output in dist/
 
 ## Media
 
-All photos come from the Unsplash API and are served from Unsplash's CDN at responsive sizes. Every photographer is credited in the footer.
+All photos come from the Unsplash API. At build time Astro downloads each one, crops and resizes it to several widths and encodes it as WebP, so every image is served from this site's own domain (cached for a year) rather than hot-linked. Every photographer is credited in the footer.
 
 - `scripts/queries.json`: place-specific search terms.
 - `scripts/unsplash-search.mjs`: runs the searches and caches results in `.cache/` (gitignored). Needs `UNSPLASH_ACCESS_KEY`.
