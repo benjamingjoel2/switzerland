@@ -246,6 +246,42 @@
   from { opacity: 0.01; transform: translateY(16px); }
 }
 
+/* Swiss map pins */
+.pin-dot {
+  transition: transform 0.4s var(--ease-out-soft), opacity 0.6s var(--ease-out-soft);
+  transition-delay: calc(var(--i, 0) * 70ms + 300ms), calc(var(--i, 0) * 70ms + 300ms);
+}
+.pin:hover .pin-dot,
+.pin:focus-visible .pin-dot {
+  transform: scale(1.25);
+  transition-delay: 0ms;
+}
+.pin-halo {
+  animation: pin-pulse 2.6s ease-out infinite;
+  animation-delay: calc(var(--i, 0) * 260ms);
+}
+@keyframes pin-pulse {
+  0% { transform: scale(0.8); opacity: 0.9; }
+  70%, 100% { transform: scale(2.1); opacity: 0; }
+}
+.js [data-map]:not(.in) .pin-dot {
+  opacity: 0;
+  transform: translateY(-14px) scale(0.6);
+}
+.pin-label {
+  transition: opacity 0.6s var(--ease-out-soft);
+  transition-delay: calc(var(--i, 0) * 70ms + 450ms);
+}
+.js [data-map]:not(.in) .pin-label {
+  opacity: 0;
+}
+@media (max-width: 767px) {
+  .pin-dot,
+  .pin:hover .pin-dot {
+    transform: scale(1.9);
+  }
+}
+
 /* Hero scenes */
 .scene {
   opacity: 0;

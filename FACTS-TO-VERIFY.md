@@ -57,6 +57,7 @@ Written on 20 October 2026, from general knowledge and not checked against live 
 | P6 | Lake Lucerne summer water **18–22°C**. | Home Places |
 | P7 | Basel has **nearly 40 museums**. | Destinations |
 | P8 | The Upper Engadin lies at **about 1,800 m**, and the Albula line is UNESCO-listed. | Destinations |
+| P9 | Switzerland is **about 350 km east–west** at its widest and **about 220 km north–south**; most destinations are **under three hours apart by train**. | Destinations → The map |
 
 ## 5. Food, festivals & culture
 

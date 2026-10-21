@@ -1,11 +1,13 @@
 ---
 import Img from '../Img.astro';
 import SectionHead from '../SectionHead.astro';
+import SwissMap from '../SwissMap.astro';
 import { places } from '../../data/site';
 ---
 <section class="section" id="places">
   <div class="wrap">
     <SectionHead n="06" label="Destinations" title={['Explore', 'by region']} link={{ href: '/destinations/', text: 'All ten destinations' }} />
+    <div class="mb-16 border-y hair py-10 md:mb-24 md:py-14"><SwissMap class="mx-auto max-w-5xl" /></div>
   </div>
   <div class="wrap">
     <div class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-6 [scrollbar-width:thin] md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 xl:grid-cols-4">

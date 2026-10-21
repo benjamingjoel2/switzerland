@@ -5,16 +5,29 @@ import Img from '../components/Img.astro';
 import FilterChips from '../components/FilterChips.astro';
 import TextLink from '../components/TextLink.astro';
 import ClosingCta from '../components/ClosingCta.astro';
+import SwissMap from '../components/SwissMap.astro';
 import { destinations } from '../data/destinations';
 ---
 <Base title="Destinations in Switzerland" description="Ten Swiss destinations worth your week: Zermatt, the Jungfrau Region, Lucerne, Lake Geneva, Lugano, Bern, Zurich, St. Moritz, Appenzell and Basel — with seasons, altitudes and how to get there." ogSlot="hero-destinations">
   <PageHero photo="hero-destinations" label="Destinations · 10 places" title={['Ten places,', 'one rail pass.']}
     intro="Switzerland is small enough to cross in a morning and varied enough to need a month. These are the ten places we keep coming back to — and when to go." />
 
+  <section class="section !pb-0 !pt-16" id="map">
+    <div class="wrap grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-3">
+        <p class="label mb-6" data-reveal>(01) The map</p>
+        <h2 class="headline text-3xl sm:text-4xl" data-reveal>Smaller than you think.</h2>
+        <p class="mt-4 text-slate-400" data-reveal>About 350 km east to west at its widest and 220 km north to south. Most of these places are under three hours apart by train.</p>
+        <p class="label mt-8 hidden lg:block" data-reveal>Tap a pin to jump to it</p>
+      </div>
+      <div class="lg:col-span-9"><SwissMap linkBase="" /></div>
+    </div>
+  </section>
+
   <section class="section !pt-16" data-filter-group>
     <div class="wrap">
       <div class="mb-6 grid gap-6 lg:grid-cols-12">
-        <p class="label lg:col-span-3" data-reveal>(01) All destinations</p>
+        <p class="label lg:col-span-3" data-reveal>(02) All destinations</p>
         <p class="headline text-3xl sm:text-4xl lg:col-span-9" data-words>Four languages, 26 cantons and about 5,000 km of railway. Pick a region, or let us join three of them into one week.</p>
       </div>
       <div class="mt-12"><FilterChips options={['Mountains', 'Lakes', 'Cities']} label="Filter destinations" /></div>
