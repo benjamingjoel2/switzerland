@@ -1,7 +1,7 @@
 export const brand = {
   name: 'Swiss Horizon',
   tagline: 'Above the clouds. On schedule.',
-  email: 'hello@swisshorizon.ch',
+  email: 'swisshorizon@tourground.com',
   instagram: '@swisshorizon.travel',
   base: 'Interlaken, Bernese Oberland',
 };

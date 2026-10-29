@@ -7,8 +7,8 @@ import { heroScenes } from '../../data/site';
   {heroScenes.map((s, i) => (
     <div class:list={['scene absolute inset-0 -z-10', i === 0 && 'active']} aria-hidden={i !== 0 ? 'true' : 'false'}>
       {i === 0
-        ? <Img photo={s.img} priority sizes="100vw" widths={[640, 1024, 1600, 2200]} />
-        : <template data-defer><Img photo={s.img} sizes="100vw" widths={[640, 1024, 1600, 2200]} /></template>}
+        ? <Img photo={s.img} priority full sizes="100vw" widths={[640, 1024, 1600, 2200]} />
+        : <template data-defer><Img photo={s.img} full sizes="100vw" widths={[640, 1024, 1600, 2200]} /></template>}
     </div>
   ))}
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/35 to-ink-950/50"></div>

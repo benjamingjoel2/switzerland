@@ -89,5 +89,5 @@ Not facts to verify, but fictional and must be replaced before going live:
 - **Testimonials** (Sarah M., David & Kenji, Priya R.).
 - **"As read in" publication names** (Platform Seven, The Slow Line, Thin Air Review, Kilometre Zero, Valley Post). Remove this strip unless there is real press coverage.
 - Company stats: 4.9 rating, 1,480 guests, 14 valleys, "since 2017", "0 missed connections in 2025".
-- Contact details: hello@swisshorizon.ch, @swisshorizon.travel, Interlaken base.
+- Contact details: swisshorizon@tourground.com, @swisshorizon.travel, Interlaken base.
 - Booking and newsletter forms show a success message but **do not send data anywhere yet**. Connect a form service before launch.

@@ -4,7 +4,7 @@ interface Props { photo: string; label: string; title: string[]; intro: string; 
 const { photo: slotName, label, title, intro } = Astro.props;
 ---
 <section class="relative isolate flex min-h-[78svh] items-end overflow-hidden pt-28 pb-14 md:pb-20">
-  <div class="absolute inset-0 -z-10"><Img photo={slotName} priority sizes="100vw" widths={[640, 1024, 1600, 2200]} /></div>
+  <div class="absolute inset-0 -z-10"><Img photo={slotName} priority full sizes="100vw" widths={[640, 1024, 1600, 2200]} /></div>
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/40 to-ink-950/40"></div>
   <div class="wrap grid items-end gap-8 lg:grid-cols-12">
     <div class="lg:col-span-8">

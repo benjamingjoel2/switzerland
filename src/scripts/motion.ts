@@ -12,7 +12,7 @@ const io = new IntersectionObserver(
       }
     }
   },
-  { rootMargin: '0px 0px -8% 0px' },
+  { rootMargin: '0px 0px 10% 0px' },
 );
 $$('[data-reveal], [data-mask]').forEach((el) => io.observe(el));
 
@@ -114,11 +114,12 @@ addEventListener('resize', onScroll);
 onScroll();
 
 /* ---------- Hero scenes ---------- */
-// Scenes 2–4 ship inside <template> so they don't compete with the first image; mount them once the page has loaded.
-const mountDeferred = () =>
-  $$<HTMLTemplateElement>('template[data-defer]').forEach((t) => t.replaceWith(t.content.cloneNode(true)));
-if (document.readyState === 'complete') mountDeferred();
-else addEventListener('load', mountDeferred, { once: true });
+// Scenes 2–4 ship inside <template> so they don't compete with the first image.
+// Each is mounted just ahead of its turn: the next scene loads while the current one is showing.
+const mountScene = (scene: HTMLElement | undefined) => {
+  const t = scene?.querySelector<HTMLTemplateElement>('template[data-defer]');
+  if (t) t.replaceWith(t.content.cloneNode(true));
+};
 
 const hero = document.querySelector<HTMLElement>('[data-hero]');
 if (hero) {
@@ -138,11 +139,17 @@ if (hero) {
       t.classList.remove('active');
       t.setAttribute('aria-selected', String(j === i));
     });
+    mountScene(scenes[i]);
     void tabs[i]?.offsetWidth; // restart the progress animation
     tabs[i]?.classList.add('active');
     clearTimeout(timer);
     if (!reduced) timer = window.setTimeout(() => go(i + 1), dur);
   };
+  // Preload the upcoming scene once the page has finished loading, and after each change.
+  const preloadNext = () => mountScene(scenes[(i + 1) % scenes.length]);
+  if (document.readyState === 'complete') setTimeout(preloadNext, 1500);
+  else addEventListener('load', () => setTimeout(preloadNext, 1500), { once: true });
+  hero.addEventListener('transitionend', preloadNext);
   tabs.forEach((t, j) => t.addEventListener('click', () => go(j)));
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) clearTimeout(timer);

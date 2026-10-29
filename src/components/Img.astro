@@ -1,38 +1,81 @@
 ---
-import { Picture } from 'astro:assets';
-import { photo, src } from '../lib/media';
+import { getImage } from 'astro:assets';
+import sharp from 'sharp';
+import { photo, src, type Photo } from '../lib/media';
 
-// Photos are fetched from Unsplash once at build time, then resized and re-encoded
-// (WebP) by Astro and served from this site's own domain.
+// Photos are fetched from Unsplash once at build time, then resized and encoded
+// (AVIF, WebP fallback) by Astro and served from this site's own domain.
+//
+// Speed details:
+// - `full` images (full-bleed backgrounds) get a separate portrait crop for phones,
+//   so a tall phone screen never downloads a wide landscape image.
+// - On very dense phone screens (3x) we request ~1.8x resolution: visually identical, far fewer bytes.
+// - A ~200-byte blurred preview is inlined, so every photo shows something instantly.
 interface Props {
   photo: string;
   sizes?: string;
   ratio?: number; // height / width; omit to keep the original crop
   widths?: number[];
+  full?: boolean;
+  phoneRatio?: number; // height / width of the phone crop for `full` images
   class?: string;
   priority?: boolean;
   alt?: string;
 }
-const { photo: slotName, sizes = '100vw', ratio, widths = [480, 800, 1200, 1600], class: cls = '', priority = false, alt } = Astro.props;
+const { photo: slotName, sizes = '100vw', ratio, widths = [480, 800, 1200, 1600], full = false, phoneRatio = 1.8, class: cls = '', priority = false, alt } = Astro.props;
 const p = photo(slotName);
 const r = ratio ?? p.height / p.width;
 const maxW = Math.max(...widths);
-const height = Math.round(maxW * r);
+const quality = { avif: priority ? 42 : 35, webp: priority ? 55 : 48 };
+
+async function variants(source: Photo, ws: number[], ratioHW: number, format: 'avif' | 'webp', q: number) {
+  const w = Math.max(...ws);
+  const img = await getImage({ src: src(source, w, ratioHW, 85), width: w, height: Math.round(w * ratioHW), widths: ws, format, quality: q });
+  return img.srcSet.attribute;
+}
+
+// Cap very dense phone screens at ~1.8x by shrinking the phone slot size for them.
+const mobileSize = sizes.split(',').pop()!.trim();
+const cappedSizes = `(max-width: 767px) and (min-resolution: 2.5dppx) calc(${mobileSize} * 0.6), ${sizes}`;
+
+const desktop = {
+  avif: await variants(p, widths, r, 'avif', quality.avif),
+  webp: await variants(p, widths, r, 'webp', quality.webp),
+};
+const phoneWidths = [480, 720, 900];
+const phone = full
+  ? {
+      avif: await variants(p, phoneWidths, phoneRatio, 'avif', quality.avif),
+      webp: await variants(p, phoneWidths, phoneRatio, 'webp', quality.webp),
+    }
+  : null;
+const fallback = await getImage({ src: src(p, maxW, r, 85), width: Math.min(maxW, 1200), height: Math.round(Math.min(maxW, 1200) * r), format: 'webp', quality: quality.webp });
+
+// Tiny blurred placeholder, inlined as a data URI (cached per photo for the build).
+const blurCache: Map<string, string> = ((globalThis as any).__blurCache ??= new Map());
+const blurKey = `${p.id}:${r.toFixed(3)}`;
+let blur = blurCache.get(blurKey);
+if (!blur) {
+  const res = await fetch(src(p, 32, r, 50));
+  const buf = await sharp(Buffer.from(await res.arrayBuffer())).resize(16).blur(0.6).webp({ quality: 35 }).toBuffer();
+  blur = `data:image/webp;base64,${buf.toString('base64')}`;
+  blurCache.set(blurKey, blur);
+}
 ---
-<Picture
-  src={src(p, maxW, r, 85)}
-  width={maxW}
-  height={height}
-  widths={widths}
-  sizes={sizes}
-  formats={['webp']}
-  fallbackFormat="webp"
-  quality={priority ? 60 : 55}
-  alt={alt ?? p.alt}
-  loading={priority ? 'eager' : 'lazy'}
-  decoding={priority ? 'sync' : 'async'}
-  fetchpriority={priority ? 'high' : 'auto'}
-  style={`background-color:${p.color}`}
-  pictureAttributes={{ class: 'block h-full w-full' }}
-  class={`h-full w-full object-cover ${cls}`}
-/>
+<picture class="block h-full w-full">
+  {phone && <source media="(max-width: 767px)" type="image/avif" srcset={phone.avif} sizes="(min-resolution: 2.5dppx) 60vw, 100vw" />}
+  {phone && <source media="(max-width: 767px)" type="image/webp" srcset={phone.webp} sizes="(min-resolution: 2.5dppx) 60vw, 100vw" />}
+  <source type="image/avif" srcset={desktop.avif} sizes={cappedSizes} />
+  <source type="image/webp" srcset={desktop.webp} sizes={cappedSizes} />
+  <img
+    src={fallback.src}
+    width={fallback.attributes.width}
+    height={fallback.attributes.height}
+    alt={alt ?? p.alt}
+    loading={priority ? 'eager' : 'lazy'}
+    decoding={priority ? 'sync' : 'async'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    style={`background:${p.color} url(${blur}) center/cover no-repeat`}
+    class={`h-full w-full object-cover ${cls}`}
+  />
+</picture>
