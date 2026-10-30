@@ -28,7 +28,7 @@ const slugOf = (t: string) => t.toLowerCase().includes('glacier') ? 'glacier-exp
               </td>
               <td class="col-span-2 text-sm text-slate-400 md:px-4 md:py-5">{d.place}</td>
               <td class="hidden font-mono text-sm text-slate-400 md:table-cell md:px-4 md:py-5">{d.len}</td>
-              <td class="col-start-1 font-mono text-sm md:px-4 md:py-5">{d.price}</td>
+              <td class="col-start-1 font-mono text-sm md:px-4 md:py-5">From {d.price}</td>
               <td class={`col-start-2 row-start-1 text-right font-mono text-sm md:px-4 md:py-5 md:text-left ${tone[d.kind as keyof typeof tone]}`}>
                 <span class:list={['mr-2 inline-block h-1.5 w-1.5 rounded-full bg-current align-middle', d.kind === 'low' && 'dot-live']}></span>{d.status}
               </td>

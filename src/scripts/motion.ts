@@ -178,28 +178,6 @@ for (const group of $$('[data-filter-group]')) {
   );
 }
 
-/* ---------- Testimonial slider ---------- */
-const quotes = document.querySelector<HTMLElement>('[data-quotes]');
-if (quotes) {
-  const slides = $$('.quote-slide', quotes);
-  const count = quotes.querySelector('[data-count]');
-  let i = 0;
-  const show = (n: number) => {
-    i = (n + slides.length) % slides.length;
-    slides.forEach((s, j) => {
-      const on = j === i;
-      s.style.opacity = on ? '1' : '0';
-      s.style.transform = on ? 'none' : 'translateY(12px)';
-      s.style.pointerEvents = on ? 'auto' : 'none';
-      s.setAttribute('aria-hidden', String(!on));
-    });
-    if (count) count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
-  };
-  quotes.querySelector('[data-prev]')?.addEventListener('click', () => show(i - 1));
-  quotes.querySelector('[data-next]')?.addEventListener('click', () => show(i + 1));
-  show(0);
-}
-
 /* ---------- Accordion ---------- */
 for (const acc of $$('.acc')) {
   const btn = acc.querySelector('button')!;
@@ -218,7 +196,8 @@ if (menuBtn && menu) {
   const b2 = menuBtn.querySelector<HTMLElement>('[data-bar2]')!;
   const set = (open: boolean) => {
     menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    // Labels live on the button so the pre-rendered FR/DE/ES pages carry their own.
+    menuBtn.setAttribute('aria-label', (open ? menuBtn.dataset.labelClose : menuBtn.dataset.labelOpen) ?? '');
     menu.classList.toggle('opacity-0', !open);
     menu.classList.toggle('pointer-events-none', !open);
     document.body.style.overflow = open ? 'hidden' : '';

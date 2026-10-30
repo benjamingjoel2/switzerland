@@ -5,7 +5,7 @@ import { journal } from '../../data/site';
 ---
 <section class="section border-t hair" id="journal">
   <div class="wrap">
-    <SectionHead n="12" label="Journal" title={['Field', 'notes']} link={{ href: '/travel-tips/', text: 'All travel tips' }} />
+    <SectionHead n="10" label="Journal" title={['Field', 'notes']} link={{ href: '/travel-tips/', text: 'All travel tips' }} />
     <div class="grid gap-10 md:grid-cols-3 md:gap-4">
       {journal.map((a, i) => (
         <a href={a.href} class="group" data-reveal style={`--d:${i * 90}ms`}>

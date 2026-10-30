@@ -1,0 +1,10 @@
+{
+  "outDir": "dist",
+  "locales": ["fr", "de", "es"],
+  "siteUrl": "https://swisshorizon.tourground.com",
+  "cleanUrls": true,
+  "skipLinkPrefixes": ["/_astro/"],
+  "textAttrs": ["data-title", "data-label-open", "data-label-close"],
+  "jsFiles": [],
+  "sitemaps": ["sitemap-0.xml"]
+}

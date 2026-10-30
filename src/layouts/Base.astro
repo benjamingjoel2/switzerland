@@ -26,7 +26,7 @@ const jsonLd = {
   url: Astro.site?.toString(),
   email: brand.email,
   areaServed: { '@type': 'Country', name: 'Switzerland' },
-  address: { '@type': 'PostalAddress', addressLocality: 'Interlaken', addressCountry: 'CH' },
+  address: { '@type': 'PostalAddress', ...brand.postalAddress },
 };
 ---
 <!doctype html>

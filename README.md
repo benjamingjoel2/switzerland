@@ -11,6 +11,7 @@ Travel website for Switzerland: small-group, rail-first journeys. Built with **A
 | `/things-to-do/` | Peaks, scenic trains, lakes, food, festivals, winter |
 | `/travel-tips/` | Transport, money, entry, seasons, etiquette, budget |
 | `/contact/` | Booking request form and contact details |
+| `/privacy/`, `/terms/`, `/cookies/` | Privacy Policy, Booking Terms, Cookie Policy (text in `src/data/legal.ts`, `src/lib/legal.ts`) |
 
 ## Develop
 
@@ -22,7 +23,7 @@ npm run build    # static output in dist/
 
 ## Media
 
-All photos come from the Unsplash API. At build time Astro downloads each one, crops and resizes it to several widths and encodes it as WebP, so every image is served from this site's own domain (cached for a year) rather than hot-linked. Every photographer is credited in the footer.
+All photos come from the Unsplash API. At build time Astro downloads each one, crops and resizes it to several widths and encodes it as WebP, so every image is served from this site's own domain (cached for a year) rather than hot-linked. Photographers are not credited on the site (the Unsplash License does not require it); the source of every photo is kept in `src/data/media.json`.
 
 - `scripts/queries.json`: place-specific search terms.
 - `scripts/unsplash-search.mjs`: runs the searches and caches results in `.cache/` (gitignored). Needs `UNSPLASH_ACCESS_KEY`.
@@ -36,6 +37,30 @@ API keys are read from environment variables only and never committed.
 - `src/data/site.ts`: home page content, journeys, departures, FAQ.
 - `src/data/destinations.ts`, `src/data/things.ts`: content for the inner pages.
 - Facts that must be checked before launch are listed in `FACTS-TO-VERIFY.md`.
+
+## Languages
+
+The site is in English (default), French, German (Swiss spelling, no ß) and Spanish.
+English pages live at the normal URLs. `npm run build` runs `astro build`, then
+`scripts/i18n.mjs`, which writes `/fr/`, `/de/` and `/es/` copies of every page into `dist/`
+from `i18n/fr.json`, `i18n/de.json` and `i18n/es.json`. Each file maps an English string to
+its translation, and a sentence with inline markup is one entry. The script also sets
+`<html lang>`, canonical, hreflang (x-default = en) and `og:locale`, localises internal links
+and adds every language to `sitemap-0.xml`. The pages are pre-rendered after the Astro build
+rather than through Astro's i18n routing, so the components stay single-language. No
+translation code runs in the browser. Text that the menu script needs (`data-label-open`,
+`data-label-close`) lives in the HTML so each language carries its own. The header (from
+`lg`) and the mobile menu carry an EN · FR · DE · ES selector.
+
+After changing any English copy, run `npm run i18n:extract` and add whatever is listed in
+`i18n/missing.<locale>.json`. `npm run check` fails until every string is translated.
+
+## Before launch
+
+- Have a lawyer review `/privacy/`, `/terms/` and `/cookies/`. If analytics or a newsletter provider is added, update the Cookie and Privacy policies (and add consent first).
+- Confirm the business address (Impact Hub Zürich – Kraftwerk, Selnaustrasse 25, 8001 Zürich) and `swisshorizon@tourground.com`.
+- The newsletter form in the footer only shows a thank-you message; connect it to a provider with double opt-in.
+- By the owner's rule the site shows no phone, WhatsApp, social links, licence numbers, team or guide bios, ratings or testimonials.
 
 ## SEO
 
