@@ -178,28 +178,6 @@ for (const group of $$('[data-filter-group]')) {
   );
 }
 
-/* ---------- Testimonial slider ---------- */
-const quotes = document.querySelector<HTMLElement>('[data-quotes]');
-if (quotes) {
-  const slides = $$('.quote-slide', quotes);
-  const count = quotes.querySelector('[data-count]');
-  let i = 0;
-  const show = (n: number) => {
-    i = (n + slides.length) % slides.length;
-    slides.forEach((s, j) => {
-      const on = j === i;
-      s.style.opacity = on ? '1' : '0';
-      s.style.transform = on ? 'none' : 'translateY(12px)';
-      s.style.pointerEvents = on ? 'auto' : 'none';
-      s.setAttribute('aria-hidden', String(!on));
-    });
-    if (count) count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
-  };
-  quotes.querySelector('[data-prev]')?.addEventListener('click', () => show(i - 1));
-  quotes.querySelector('[data-next]')?.addEventListener('click', () => show(i + 1));
-  show(0);
-}
-
 /* ---------- Accordion ---------- */
 for (const acc of $$('.acc')) {
   const btn = acc.querySelector('button')!;

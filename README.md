@@ -11,6 +11,7 @@ Travel website for Switzerland: small-group, rail-first journeys. Built with **A
 | `/things-to-do/` | Peaks, scenic trains, lakes, food, festivals, winter |
 | `/travel-tips/` | Transport, money, entry, seasons, etiquette, budget |
 | `/contact/` | Booking request form and contact details |
+| `/privacy/`, `/terms/`, `/cookies/` | Privacy Policy, Booking Terms, Cookie Policy (text in `src/data/legal.ts`, `src/lib/legal.ts`) |
 
 ## Develop
 
@@ -22,7 +23,7 @@ npm run build    # static output in dist/
 
 ## Media
 
-All photos come from the Unsplash API. At build time Astro downloads each one, crops and resizes it to several widths and encodes it as WebP, so every image is served from this site's own domain (cached for a year) rather than hot-linked. Every photographer is credited in the footer.
+All photos come from the Unsplash API. At build time Astro downloads each one, crops and resizes it to several widths and encodes it as WebP, so every image is served from this site's own domain (cached for a year) rather than hot-linked. Photographers are not credited on the site (the Unsplash License does not require it); the source of every photo is kept in `src/data/media.json`.
 
 - `scripts/queries.json`: place-specific search terms.
 - `scripts/unsplash-search.mjs`: runs the searches and caches results in `.cache/` (gitignored). Needs `UNSPLASH_ACCESS_KEY`.
@@ -36,6 +37,13 @@ API keys are read from environment variables only and never committed.
 - `src/data/site.ts`: home page content, journeys, departures, FAQ.
 - `src/data/destinations.ts`, `src/data/things.ts`: content for the inner pages.
 - Facts that must be checked before launch are listed in `FACTS-TO-VERIFY.md`.
+
+## Before launch
+
+- Have a lawyer review `/privacy/`, `/terms/` and `/cookies/`. If analytics or a newsletter provider is added, update the Cookie and Privacy policies (and add consent first).
+- Confirm the business address (Impact Hub Zürich – Kraftwerk, Selnaustrasse 25, 8001 Zürich) and `swisshorizon@tourground.com`.
+- The newsletter form in the footer only shows a thank-you message; connect it to a provider with double opt-in.
+- By the owner's rule the site shows no phone, WhatsApp, social links, licence numbers, team or guide bios, ratings or testimonials.
 
 ## SEO
 

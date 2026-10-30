@@ -1,15 +1,14 @@
 ---
 import Logo from './Logo.astro';
 import { nav, brand } from '../data/site';
-import { credits, withUtm } from '../lib/media';
-const photos = credits();
 ---
 <footer class="border-t hair bg-ink-950 pt-20 pb-10 md:pt-28">
   <div class="wrap">
     <div class="grid gap-14 md:grid-cols-12">
       <div class="md:col-span-4">
         <Logo />
-        <p class="mt-6 max-w-xs text-slate-400">Small-group, rail-first journeys through the Swiss Alps and lakes. Ten guests at most. Based in {brand.base}.</p>
+        <p class="mt-6 max-w-xs text-slate-400">Small-group, rail-first journeys through the Swiss Alps and lakes. Ten guests at most.</p>
+        <p class="mt-4 max-w-xs text-sm text-slate-500">{brand.address.join(', ')}</p>
       </div>
       <div class="md:col-span-2">
         <p class="label mb-5">Explore</p>
@@ -21,7 +20,6 @@ const photos = credits();
         <p class="label mb-5">Contact</p>
         <ul class="space-y-3 text-slate-400">
           <li><a href={`mailto:${brand.email}`} class="hover:text-snow">{brand.email}</a></li>
-          <li>Instagram {brand.instagram}</li>
           <li>Mon–Fri, 08:00–18:00 CET</li>
         </ul>
       </div>
@@ -37,22 +35,9 @@ const photos = credits();
       </div>
     </div>
 
-    <div class="mt-20 border-t hair pt-10">
-      <p class="label mb-4">Photo credits</p>
-      <p class="text-xs leading-relaxed text-slate-500">
-        All photographs from <a class="underline hover:text-snow" href={withUtm('https://unsplash.com/')}>Unsplash</a>, shot in Switzerland. With thanks to
-        {photos.map((p, i) => (
-          <>
-            {' '}<a class="text-slate-400 underline-offset-2 hover:text-snow hover:underline" href={withUtm(p.userUrl)}>{p.name}</a>
-            {' '}(<a class="hover:text-snow hover:underline" href={withUtm(p.pageUrl)}>{p.location || 'photo'}</a>){i < photos.length - 1 ? ',' : '.'}
-          </>
-        ))}
-      </p>
-    </div>
-
-    <div class="mt-10 flex flex-col gap-4 border-t hair pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+    <div class="mt-20 flex flex-col gap-4 border-t hair pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
       <p>© 2026 Swiss Horizon. Prices in CHF per person, twin share.</p>
-      <p class="flex gap-6"><a href="/travel-tips/" class="hover:text-snow">Travel tips</a><a href="/contact/" class="hover:text-snow">Booking terms</a><a href="/contact/" class="hover:text-snow">Privacy</a></p>
+      <p class="flex gap-6"><a href="/travel-tips/" class="hover:text-snow">Travel tips</a><a href="/terms/" class="hover:text-snow">Booking terms</a><a href="/privacy/" class="hover:text-snow">Privacy</a><a href="/cookies/" class="hover:text-snow">Cookies</a></p>
     </div>
   </div>
 </footer>

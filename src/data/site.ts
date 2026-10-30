@@ -2,8 +2,9 @@ export const brand = {
   name: 'Swiss Horizon',
   tagline: 'Above the clouds. On schedule.',
   email: 'swisshorizon@tourground.com',
-  instagram: '@swisshorizon.travel',
-  base: 'Interlaken, Bernese Oberland',
+  /** Business address: Impact Hub Zürich, Kraftwerk (premium coworking, owner-approved arrangement). */
+  address: ['Impact Hub Zürich – Kraftwerk', 'Selnaustrasse 25', '8001 Zürich', 'Switzerland'],
+  postalAddress: { streetAddress: 'Selnaustrasse 25', postalCode: '8001', addressLocality: 'Zürich', addressCountry: 'CH' },
 };
 
 export const nav = [
@@ -255,52 +256,8 @@ export const departures = [
   { d: '21 — 26 Sep', y: '2027', trip: 'Ticino Lakes & Lugano', place: 'Lugano, Locarno & Verzasca', len: '5 nights', price: 'CHF 2,390', status: 'Open · 8 left', kind: 'open' },
 ];
 
-export const guides = [
-  {
-    name: 'Reto Imboden',
-    role: 'Mountain guide · Zermatt',
-    quote: "The Matterhorn doesn't care about your schedule. Luckily, the trains do.",
-    img: 'g-reto',
-  },
-  {
-    name: 'Annina Caflisch',
-    role: 'Rail lead · Graubünden',
-    quote: 'Ask me which side of the carriage to sit on. It matters more than you think.',
-    img: 'g-annina',
-  },
-  {
-    name: 'Lena Brülisauer',
-    role: 'Food & cheese · Appenzell',
-    quote: 'Good fondue is mostly patience, a little kirsch and nobody in a hurry.',
-    img: 'g-lena',
-  },
-  {
-    name: 'Matteo Ferretti',
-    role: 'Lakes & boats · Ticino',
-    quote: 'South of the Gotthard the Alps take their shoes off. Come and see.',
-    img: 'g-matteo',
-  },
-];
 
-export const testimonials = [
-  {
-    text: "I'd done Switzerland before — five cities in six days. This was one valley, one hut and the best week I've had in years. Every train was on time, and so were we.",
-    name: 'Sarah M.',
-    trip: 'Jungfrau Huts & Waterfalls · June 2026',
-  },
-  {
-    text: 'Annina knew exactly where to sit on the Glacier Express and when to put the camera down. Eight hours went by like two.',
-    name: 'David & Kenji',
-    trip: 'Glacier Express Winter Week · January 2026',
-  },
-  {
-    text: 'I came for the lakes and left with a swimming habit at 19°C and a strong opinion on rösti. Nothing felt rushed, not once.',
-    name: 'Priya R.',
-    trip: 'Lake Lucerne Slow Week · May 2026',
-  },
-];
 
-export const press = ['Platform Seven', 'The Slow Line', 'Thin Air Review', 'Kilometre Zero', 'Valley Post'];
 
 export const included = [
   { title: 'Your room', text: 'Mountain hotels, lake houses, one hut night.', icon: 'bed' },
