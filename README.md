@@ -38,6 +38,23 @@ API keys are read from environment variables only and never committed.
 - `src/data/destinations.ts`, `src/data/things.ts`: content for the inner pages.
 - Facts that must be checked before launch are listed in `FACTS-TO-VERIFY.md`.
 
+## Languages
+
+The site is in English (default), French, German (Swiss spelling, no ß) and Spanish.
+English pages live at the normal URLs. `npm run build` runs `astro build`, then
+`scripts/i18n.mjs`, which writes `/fr/`, `/de/` and `/es/` copies of every page into `dist/`
+from `i18n/fr.json`, `i18n/de.json` and `i18n/es.json`. Each file maps an English string to
+its translation, and a sentence with inline markup is one entry. The script also sets
+`<html lang>`, canonical, hreflang (x-default = en) and `og:locale`, localises internal links
+and adds every language to `sitemap-0.xml`. The pages are pre-rendered after the Astro build
+rather than through Astro's i18n routing, so the components stay single-language. No
+translation code runs in the browser. Text that the menu script needs (`data-label-open`,
+`data-label-close`) lives in the HTML so each language carries its own. The header (from
+`lg`) and the mobile menu carry an EN · FR · DE · ES selector.
+
+After changing any English copy, run `npm run i18n:extract` and add whatever is listed in
+`i18n/missing.<locale>.json`. `npm run check` fails until every string is translated.
+
 ## Before launch
 
 - Have a lawyer review `/privacy/`, `/terms/` and `/cookies/`. If analytics or a newsletter provider is added, update the Cookie and Privacy policies (and add consent first).

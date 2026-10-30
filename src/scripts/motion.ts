@@ -196,7 +196,8 @@ if (menuBtn && menu) {
   const b2 = menuBtn.querySelector<HTMLElement>('[data-bar2]')!;
   const set = (open: boolean) => {
     menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    // Labels live on the button so the pre-rendered FR/DE/ES pages carry their own.
+    menuBtn.setAttribute('aria-label', (open ? menuBtn.dataset.labelClose : menuBtn.dataset.labelOpen) ?? '');
     menu.classList.toggle('opacity-0', !open);
     menu.classList.toggle('pointer-events-none', !open);
     document.body.style.overflow = open ? 'hidden' : '';
