@@ -16,7 +16,7 @@ const updated = new Date(`${page.updated}T12:00:00Z`).toLocaleDateString('en-GB'
       {page.sections.map((s) => (
         <>
           <h2 class="headline mt-12 mb-4 text-2xl">{s.h}</h2>
-          {s.p.map((t) => (t.includes('<ul>') ? <div class="mb-4 text-slate-400" set:html={t} /> : <p class="mb-4 text-slate-400" set:html={t} />))}
+          {s.p.map((t) => (/^<(ul|div|p|table)[ >]/.test(t) ? <div class="mb-4 text-slate-400" set:html={t} /> : <p class="mb-4 text-slate-400" set:html={t} />))}
         </>
       ))}
     </div>
@@ -26,5 +26,8 @@ const updated = new Date(`${page.updated}T12:00:00Z`).toLocaleDateString('en-GB'
   .legal :global(a) { text-decoration: underline; text-underline-offset: 2px; }
   .legal :global(ul) { list-style: disc; padding-left: 1.25rem; margin: 0.75rem 0; }
   .legal :global(li) { margin-bottom: 0.4rem; }
+  .legal :global(.legal-table-wrap) { overflow-x: auto; margin: 0.75rem 0; }
+  .legal :global(table) { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .legal :global(th), .legal :global(td) { text-align: left; vertical-align: top; padding: 0.5rem 1rem 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
   .legal :global(b) { color: var(--color-snow, #fff); font-weight: 500; }
 </style>
