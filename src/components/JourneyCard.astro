@@ -24,16 +24,9 @@ const { j } = Astro.props;
         <dt class="sr-only">Availability</dt>
         <dd class:list={['text-right', j.low ? 'text-alpenglow' : j.status === 'Waitlist' ? 'text-slate-500' : 'text-glacier']}>{j.status}</dd>
       </dl>
-      <div class="mt-5 flex items-center gap-3">
-        <span class="text-xs text-slate-400">Easy</span>
-        <span class="flex flex-1 gap-1" aria-label={`Effort ${j.effort} of 5`}>
-          {[1, 2, 3, 4, 5].map((n) => <span class:list={['h-1 flex-1 rounded-full', n <= j.effort ? 'bg-snow' : 'bg-ink-700']}></span>)}
-        </span>
-        <span class="text-xs text-slate-400">Alpine</span>
-      </div>
       <div class="mt-auto flex items-center justify-between pt-6">
         <span class="font-mono text-xs text-slate-400">Effort {j.effort} / 5</span>
-        <span class="inline-flex items-center gap-3 text-sm font-medium">Request <span class="chip !h-8 !w-8 bg-snow text-ink-950"><Arrow /></span></span>
+        <span class="inline-flex items-center gap-3 text-sm font-medium">Request <span class="chip"><Arrow /></span></span>
       </div>
     </div>
   </a>

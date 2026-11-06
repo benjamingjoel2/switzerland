@@ -26,7 +26,7 @@ const langs = ['en', 'fr', 'de', 'es'].map((l) => ({ l, href: l === 'en' ? path 
       <nav class="langs hidden lg:flex" aria-label="Language" data-i18n-skip>
         {langs.map(({ l, href }, i) => (<>{i > 0 && <span aria-hidden="true">·</span>}<a href={href} hreflang={l} lang={l} data-lang-link aria-current={l === 'en' ? 'true' : undefined}>{l.toUpperCase()}</a></>))}
       </nav>
-      <a href="/contact/" class="pill pill-light !py-1.5 !pl-5 !text-sm"><span>Book</span><span class="chip !h-8 !w-8"><Arrow /></span></a>
+      <a href="/contact/" class="pill pill-light !py-2 !text-sm"><span>Book</span><span class="chip"><Arrow /></span></a>
       <button class="grid h-10 w-10 place-items-center rounded-full border hair lg:hidden" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu" aria-expanded="false" aria-controls="menu" data-menu-btn>
         <span class="relative block h-3 w-4">
           <span class="absolute inset-x-0 top-0 h-px bg-snow transition-transform duration-300" data-bar1></span>

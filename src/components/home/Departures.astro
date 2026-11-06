@@ -33,8 +33,8 @@ const slugOf = (t: string) => t.toLowerCase().includes('glacier') ? 'glacier-exp
                 <span class:list={['mr-2 inline-block h-1.5 w-1.5 rounded-full bg-current align-middle', d.kind === 'low' && 'dot-live']}></span>{d.status}
               </td>
               <td class="col-start-2 row-start-4 text-right md:px-4 md:py-5">
-                <a href={`/contact/?journey=${slugOf(d.trip)}`} class="pill pill-ghost !py-1 !pl-4 !text-sm">
-                  {d.kind === 'wait' ? 'Join waitlist' : 'Reserve'}<span class="chip !h-7 !w-7"><Arrow size={10} /></span>
+                <a href={`/contact/?journey=${slugOf(d.trip)}`} class="pill pill-ghost !py-1 !text-sm">
+                  {d.kind === 'wait' ? 'Join waitlist' : 'Reserve'}<span class="chip"><Arrow size={10} /></span>
                 </a>
               </td>
             </tr>
