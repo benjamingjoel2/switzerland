@@ -3,7 +3,6 @@
  "(01) Peaks &amp; lifts": "(01) Cumbres &amp; remontes",
  "(01) Talk to us": "(01) Escríbenos",
  "(01) The idea": "(01) La idea",
- "(01) The map": "(01) El mapa",
  "(02) All destinations": "(02) Todos los destinos",
  "(02) Booking request": "(02) Solicitud de reserva",
  "(02) Money": "(02) Dinero",
@@ -685,7 +684,6 @@
  "Take the train.": "Coge el tren.",
  "Talk to us": "Escríbenos",
  "Tandem paragliding": "Parapente biplaza",
- "Tap a pin to jump to it": "Toca un marcador para ir a él",
  "Tap and most fountain water is drinkable": "El agua del grifo y la de la mayoría de las fuentes es potable",
  "Tell us which journey and when. We’ll confirm availability, room options and the full price within one working day — no payment yet.": "Dinos qué viaje y cuándo. Confirmaremos la disponibilidad, las opciones de habitación y el precio total en un día laborable — sin pagar nada todavía.",
  "Ten Swiss destinations worth your week: Zermatt, the Jungfrau Region, Lucerne, Lake Geneva, Lugano, Bern, Zurich, St. Moritz, Appenzell and Basel — with seasons, altitudes and how to get there.": "Diez destinos suizos que merecen tu semana: Zermatt, la región de la Jungfrau, Lucerna, el lago Lemán, Lugano, Berna, Zúrich, St. Moritz, Appenzell y Basilea — con estaciones, altitudes y cómo llegar.",
@@ -909,5 +907,7 @@
  "We will update this policy if the way this site uses cookies changes. The date at the top shows the latest version.": "Actualizaremos esta política si cambia el uso de cookies en este sitio. La fecha de arriba indica la versión más reciente.",
  "Questions about this policy:": "Preguntas sobre esta política:",
  "Email: <a href=\"mailto:swisshorizon@tourground.com\">swisshorizon@tourground.com</a>": "Correo electrónico: <a href=\"mailto:swisshorizon@tourground.com\">swisshorizon@tourground.com</a>",
- "Last updated <time datetime=\"2026-11-01\" data-astro-cid-lhly6ysv>⟦D:2026-11-01⟧</time>.": "Última actualización: <time datetime=\"2026-11-01\" data-astro-cid-lhly6ysv>⟦D:2026-11-01⟧</time>."
+ "Last updated <time datetime=\"2026-11-01\" data-astro-cid-lhly6ysv>⟦D:2026-11-01⟧</time>.": "Última actualización: <time datetime=\"2026-11-01\" data-astro-cid-lhly6ysv>⟦D:2026-11-01⟧</time>.",
+ "(01) The size": "(01) El tamaño",
+ "Zermatt · Matterhorn at first light": "Zermatt · El Cervino con la primera luz"
 }

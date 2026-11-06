@@ -81,17 +81,17 @@
     }
   }
 
-  /* Pill button with circular arrow chip */
+  /* Button: one solid shape with a small arrow; the ghost variant is a plain text link */
   .pill {
     display: inline-flex;
     align-items: center;
-    gap: 0.9rem;
-    padding: 0.4rem 0.4rem 0.4rem 1.35rem;
+    gap: 0.6rem;
+    padding: 0.8rem 1.35rem;
     border-radius: 999px;
     font-size: 0.9375rem;
     font-weight: 500;
     letter-spacing: -0.01em;
-    transition: background-color 0.4s var(--ease-out-soft), color 0.4s var(--ease-out-soft), border-color 0.4s;
+    transition: background-color 0.4s var(--ease-out-soft), color 0.4s var(--ease-out-soft);
     white-space: nowrap;
   }
   .pill-light {
@@ -102,32 +102,28 @@
     background: var(--color-limestone);
   }
   .pill-ghost {
-    border: 1px solid color-mix(in oklab, var(--color-snow) 35%, transparent);
+    padding-inline: 0;
+    border-radius: 0;
     color: var(--color-snow);
+    text-decoration: underline;
+    text-underline-offset: 0.35em;
+    text-decoration-color: color-mix(in oklab, var(--color-snow) 45%, transparent);
   }
   .pill-ghost:hover {
-    border-color: var(--color-snow);
-    background: color-mix(in oklab, var(--color-snow) 8%, transparent);
+    text-decoration-color: var(--color-snow);
   }
   .chip {
-    display: grid;
+    display: inline-grid;
     place-items: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 999px;
-    transition: transform 0.5s var(--ease-out-soft), background-color 0.4s;
-  }
-  .pill-light .chip {
-    background: var(--color-ink-950);
-    color: var(--color-snow);
-  }
-  .pill-ghost .chip {
-    background: var(--color-snow);
-    color: var(--color-ink-950);
+    width: auto;
+    height: auto;
+    background: none;
+    color: inherit;
+    transition: transform 0.4s var(--ease-out-soft);
   }
   .pill:hover .chip,
   .group:hover .chip {
-    transform: rotate(45deg);
+    transform: translateX(3px);
   }
 
   /* Underlined text link with wipe */
@@ -368,16 +364,16 @@
   *,
   *::before,
   *::after {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
+    animation-duration: 0.001ms;
+    transition-duration: 0.001ms;
+    scroll-behavior: auto;
   }
   .js [data-reveal],
   .js [data-mask] > span,
   .js [data-words] .w,
   .js .day-row {
-    opacity: 1 !important;
-    transform: none !important;
+    opacity: 1;
+    transform: none;
   }
 }
 

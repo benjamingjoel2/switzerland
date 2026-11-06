@@ -9,7 +9,7 @@ const { photo: slotName, label, title, intro } = Astro.props;
   <div class="wrap grid items-end gap-8 lg:grid-cols-12">
     <div class="lg:col-span-8">
       <p class="label mb-6 !text-snow/70" data-reveal>{label}</p>
-      <h1 class="display text-[3.5rem] sm:text-7xl lg:text-[8.5rem]">
+      <h1 class="display text-[3.5rem] sm:text-7xl lg:text-[5.5rem]">
         {title.map((t, i) => <span data-mask style={`--d:${i * 110}ms`}><span>{t}</span></span>)}
       </h1>
     </div>

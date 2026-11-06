@@ -54,7 +54,6 @@ const day: DayState | null = dayRoot
       rows: $$('.day-row', dayRoot),
       clock: dayRoot.querySelector('[data-day-clock]'),
       label: dayRoot.querySelector('[data-day-label]'),
-      sun: dayRoot.querySelector('[data-sun]'),
       active: -1,
     }
   : null;
@@ -66,12 +65,6 @@ function setDay(i: number) {
   const row = day.rows[i];
   if (day.clock) day.clock.textContent = row.dataset.time ?? '';
   if (day.label) day.label.textContent = row.dataset.title ?? '';
-  if (day.sun) {
-    // Sun travels along a half circle: centre (200,190), radius 180.
-    const a = Math.PI - (Math.PI * i) / Math.max(1, day.rows.length - 1);
-    day.sun.setAttribute('cx', String(200 + 180 * Math.cos(a)));
-    day.sun.setAttribute('cy', String(190 - 180 * Math.sin(a)));
-  }
 }
 
 let ticking = false;
@@ -112,51 +105,6 @@ addEventListener(
 );
 addEventListener('resize', onScroll);
 onScroll();
-
-/* ---------- Hero scenes ---------- */
-// Scenes 2–4 ship inside <template> so they don't compete with the first image.
-// Each is mounted just ahead of its turn: the next scene loads while the current one is showing.
-const mountScene = (scene: HTMLElement | undefined) => {
-  const t = scene?.querySelector<HTMLTemplateElement>('template[data-defer]');
-  if (t) t.replaceWith(t.content.cloneNode(true));
-};
-
-const hero = document.querySelector<HTMLElement>('[data-hero]');
-if (hero) {
-  const scenes = $$('.scene', hero);
-  const tabs = $$<HTMLButtonElement>('.tab', hero);
-  const dur = 7000;
-  let i = 0;
-  let timer: number | undefined;
-  hero.style.setProperty('--dur', `${dur}ms`);
-  const go = (n: number) => {
-    i = (n + scenes.length) % scenes.length;
-    scenes.forEach((s, j) => {
-      s.classList.toggle('active', j === i);
-      s.setAttribute('aria-hidden', String(j !== i));
-    });
-    tabs.forEach((t, j) => {
-      t.classList.remove('active');
-      t.setAttribute('aria-selected', String(j === i));
-    });
-    mountScene(scenes[i]);
-    void tabs[i]?.offsetWidth; // restart the progress animation
-    tabs[i]?.classList.add('active');
-    clearTimeout(timer);
-    if (!reduced) timer = window.setTimeout(() => go(i + 1), dur);
-  };
-  // Preload the upcoming scene once the page has finished loading, and after each change.
-  const preloadNext = () => mountScene(scenes[(i + 1) % scenes.length]);
-  if (document.readyState === 'complete') setTimeout(preloadNext, 1500);
-  else addEventListener('load', () => setTimeout(preloadNext, 1500), { once: true });
-  hero.addEventListener('transitionend', preloadNext);
-  tabs.forEach((t, j) => t.addEventListener('click', () => go(j)));
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) clearTimeout(timer);
-    else go(i);
-  });
-  go(0);
-}
 
 /* ---------- Filter chips ---------- */
 for (const group of $$('[data-filter-group]')) {
